@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { IconsService } from './services/icons.service';
 
 @Component({
@@ -6,10 +6,8 @@ import { IconsService } from './services/icons.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent implements OnInit {
-  constructor(private iconsService: IconsService) {}
-
-  ngOnInit() {
+export class AppComponent {
+  constructor(private iconsService: IconsService) {
     this.iconsService.initIcons();
   }
 }

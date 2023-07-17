@@ -1,0 +1,51 @@
+@import "src/shared/styles/widjets/icon_tools";
+@import "src/shared/styles/vars.colors";
+@import "src/shared/styles/vars.animations";
+@import "src/shared/styles/layout/typography";
+
+@mixin btn-big {
+  height: 48px;
+  padding: 0 32px;
+  gap: 4px;
+  span {
+    @include text-16-24;
+  }
+}
+
+@mixin btn {
+  border-radius: 4px;
+  cursor: pointer;
+  line-height: 100%;
+  width: 100%;
+
+  &_left-iconly .btn_left-wrapper {
+    display: block;
+  }
+
+  &_right-iconly .btn_right-wrapper {
+    display: block;
+  }
+
+  &_only-iconly .btn_only-icon-wrapper {
+    display: block;
+  }
+
+  &_icon-wrapper {
+    display: none;
+  }
+
+  .mat-icon,
+  &_icon-wrapper {
+    @include icon-size(16px);
+  }
+}
+
+.btn {
+  @include btn;
+
+  &.btn {
+    &_big {
+      @include btn-big;
+    }
+  }
+}
