@@ -1,8 +1,0 @@
-@import "src/shared/styles/vars.colors";
-@import "src/shared/styles/widjets/icon_tools";
-
-.request-service-header {
-  .mat-icon {
-    @include icon-color(map-get($project-colors, "text-icons", "dark", "tertiary"))
-  }
-}

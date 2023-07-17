@@ -9,19 +9,19 @@
   path {
     transition: fill $trs, stroke $trs;
   }
-  &[data-mat-icon-name="logo"] {
-    width: 160px;
-    path:first-child {
-      fill: map-get($project-colors, "gradation", 600);
-    }
-    &.hover {
-      &:hover {
-        path:first-child {
-          fill: map-get($project-colors, "main", 300);
-        }
-      }
-    }
-  }
+  // &[data-mat-icon-name="logo"] {
+  //   width: 160px;
+  //   path:first-child {
+  //     fill: map-get($project-colors, "gradation", 600);
+  //   }
+  //   &.hover {
+  //     &:hover {
+  //       path:first-child {
+  //         fill: map-get($project-colors, "main", 300);
+  //       }
+  //     }
+  //   }
+  // }
 
   // &[data-mat-icon-name="long-arrow"] {
   //   @include icon-width(40px);
