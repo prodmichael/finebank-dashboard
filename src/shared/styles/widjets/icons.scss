@@ -3,7 +3,7 @@
 @import "src/shared/styles/vars.colors";
 
 .mat-icon {
-  @include icon-color(map-get($project-colors, "gradation", 800));
+  @include icon-color(map-get($project-colors, "special-colors", white));
   &,
   svg,
   path {
@@ -22,19 +22,14 @@
       }
     }
   }
-  &[data-mat-icon-name="small-triangle"] {
-    width: 6px;
-    path {
-      fill: map-get($project-colors, "gradation", 800);
-    }
-  }
-  &[data-mat-icon-name="long-arrow"] {
-    @include icon-width(40px);
-    @include icon-height(20px);
-    @include icon-color(
-      map-get($project-colors, "text-icons", "dark", "tertiary")
-    );
-  }
+
+  // &[data-mat-icon-name="long-arrow"] {
+  //   @include icon-width(40px);
+  //   @include icon-height(20px);
+  //   @include icon-color(
+  //     map-get($project-colors, "text-icons", "dark", "tertiary")
+  //   );
+  // }
 
   &.small {
     @include icon-size(16px);

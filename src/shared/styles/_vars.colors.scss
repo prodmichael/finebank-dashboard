@@ -1,0 +1,47 @@
+// $main_font: "suisseIntl";
+// $second_font: "namu";
+
+$project-colors: (
+  "colors": (
+    primary: #299d91,
+    default-black: #191919,
+    secondary: #525256,
+    gray-01: #666,
+    gray-02: #878787,
+    gray-03: #9f9f9f,
+    gray-05: #e8e8e8,
+    gray-06: #f3f3f3,
+  ),
+  "special-colors": (
+    red: rgba(231, 61, 28, 1),
+    green: rgba(77, 175, 110, 1),
+    bg: rgba(210, 210, 210, 0.25),
+    white: rgba(255, 255, 255, 0.7),
+    dark-white: rgba(255, 255, 255, 0.08),
+  ),
+
+  "tint": (
+    800: rgba(9, 13, 17, 0.75),
+    800/45: rgba(9, 13, 17, 0.45),
+  ),
+  "text-icons": (
+    "light": (
+      "quaternary": rgba(255, 255, 255, 0.5),
+      "tertiary": rgba(255, 255, 255, 0.75),
+      "secondary": rgba(255, 255, 255, 0.9),
+      "primary": #fff,
+    ),
+    "dark": (
+      "quaternary": rgba(#060b13, 0.5),
+      "tertiary": rgba(6, 11, 19, 0.75),
+      "secondary": rgba(6, 11, 19, 0.85),
+      "primary": #060b13,
+    ),
+  ),
+  "shadow": rgba(0, 0, 0, 0.08),
+  "dark-overlay": (
+    60: rgba(#000, 0.6),
+    30: rgba(#000, 0.3),
+    5: rgba(#000, 0.05),
+  ),
+);
