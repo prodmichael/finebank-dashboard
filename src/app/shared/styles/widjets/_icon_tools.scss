@@ -1,0 +1,33 @@
+@mixin icon-size($size) {
+  @include icon-width($size);
+  @include icon-height($size);
+}
+
+@mixin icon-width($size) {
+  width: $size;
+  max-width: $size;
+  min-width: $size;
+}
+
+@mixin icon-height($size) {
+  height: $size;
+  max-height: $size;
+  min-height: $size;
+}
+
+@mixin icon-color($color) {
+  &.stroke {
+    stroke: $color;
+    &.path path {
+      stroke: $color;
+    }
+  }
+  &:not(.stroke) {
+    &.path path {
+      fill: $color;
+    }
+    &:not(.path) {
+      fill: $color;
+    }
+  }
+}

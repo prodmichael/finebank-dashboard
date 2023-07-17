@@ -1,0 +1,308 @@
+@import "src/shared/styles/widjets/icon_tools";
+@import "src/shared/styles/vars.colors";
+@import "src/shared/styles/vars.animations";
+@import "src/shared/styles/layout/typography";
+
+@mixin btn-big {
+  height: 40px;
+  padding: 0 8px;
+  gap: 4px;
+  &, span {
+    @include text-big();
+  }
+
+}
+
+@mixin btn-normal {
+  height: 32px;
+  padding: 0 8px;
+  gap: 4px;
+  &, span {
+    @include text-normal();
+  }
+
+}
+
+@mixin btn-small {
+  height: 24px;
+  padding: 0 6px;
+  gap: 4px;
+  &, span {
+    @include text-small();
+  }
+}
+
+@mixin tag-primary() {
+  $default_color: map-get($project-colors, "text-icons", "light", "primary");
+  background-color: map-get($project-colors, "main", 300);
+
+  &, span {
+    @include weight-medium();
+    color: $default_color;
+  }
+
+  @include tag-iconly($default_color);
+
+  &:not(:disabled) {
+    &:hover, &[status="hover"] {
+      background-color: map-get($project-colors, "main", 400);
+    }
+
+    &:active, &[status="active"] {
+      background-color: map-get($project-colors, "main", 200);
+    }
+  }
+
+}
+
+@mixin tag-floating() {
+  $default_color: map-get($project-colors, "text-icons", "dark", "secondary");
+  $active_color: map-get($project-colors, "main", 200);
+  background-color: map-get($project-colors, "gradation", 800);
+
+  &,
+  span {
+    @include weight-regular();
+    color: $default_color;
+  }
+
+  @include tag-iconly($default_color);
+
+  &:not(:disabled) {
+
+    &:hover, &[status="hover"] {
+      background-color: map-get($project-colors, "gradation", 700);
+      border-color: map-get($project-colors, "gradation", 600);
+    }
+
+    &:active, &[status="active"] {
+
+      &,
+      span {
+        @include weight-regular();
+        color: $active_color;
+      }
+
+      @include tag-iconly($active_color);
+
+      box-shadow: 0 8px 16px map-get($project-colors, "shadow");
+      background-color: map-get($project-colors, "gradation", 800);
+    }
+  }
+}
+
+@mixin tag-secondary($default_color, $hover_color, $active_color) {
+  background-color: map-get($default_color, "background");
+
+  &,
+  span {
+    @include weight-regular();
+    color: map-get($default_color, "color");
+  }
+  @include tag-iconly(map-get($default_color, "color"));
+
+  &:not(:disabled) {
+    &:hover, &[status="hover"] {
+      background-color: $hover_color;
+    }
+
+    &:active, &[status="active"] {
+      background-color: map-get($active_color, "background");
+      border-color: map-get($active_color, "border");
+    }
+  }
+}
+
+@mixin tag-outline() {
+  $default_color: map-get($project-colors, "text-icons", "dark", "tertiary");
+  $active_color: map-get($project-colors, "text-icons", "dark", "secondary");
+  background-color: transparent;
+  border-color: map-get($project-colors, "gradation", 600);
+
+  &,
+  span {
+    @include weight-regular();
+    color: $default_color;
+  }
+  @include tag-iconly($default_color);
+
+  &:not(:disabled) {
+    &:hover, &[status="hover"] {
+      background-color: map-get($project-colors, "gradation", 700);
+      border-color: map-get($project-colors, "gradation", 500);
+    }
+
+    &:active, &[status="active"] {
+      &,
+      span {
+        color: $active_color;
+      }
+
+      @include tag-iconly($active_color);
+
+      background-color: map-get($project-colors, "gradation", 700);
+      border-color: map-get($project-colors, "gradation", 500);
+    }
+  }
+}
+
+
+// other
+
+@mixin tag-disabled {
+  $default_color: map-get($project-colors, "text-icons", "dark", "quaternary");
+  cursor: not-allowed;
+  background-color: map-get($project-colors, "gradation", 500);
+
+  &,
+  span {
+    @include weight-regular();
+    color: $default_color;
+  }
+
+  &.tag {
+    &_primary {
+      &, span {
+        @include weight-medium();
+      }
+    }
+  }
+
+  @include tag-iconly($default_color);
+}
+
+@mixin tag {
+  border: 1px solid transparent;
+  cursor: pointer;
+  line-height: 100%;
+  width: 100%;
+  border-radius: 8px;
+
+  &_left-iconly .tag_left-wrapper {
+    display: block;
+  }
+
+  &_right-iconly .tag_right-wrapper {
+    display: block;
+  }
+
+  &_icon-wrapper {
+    display: none;
+  }
+
+  &,
+  span {
+    @include text;
+    user-select: none;
+    white-space: nowrap
+  }
+  & {
+    transition: $trs;
+  }
+
+  overflow: hidden;
+
+  &.tag {
+    &:disabled, &[status="disabled"] {
+      @include tag-disabled;
+    }
+  }
+
+  //&:not(:disabled):not(:active):focus {
+  //  outline: 1px solid black;
+  //}
+
+  .mat-icon,
+  &_icon-wrapper {
+    @include icon-size(20px);
+  }
+}
+
+@mixin tag-iconly($default_color) {
+  .mat-icon {
+    @include icon-color($default_color);
+  }
+}
+
+@mixin tag-custom-blue {
+  &.tag {
+    &_primary {
+    }
+
+    &_floating {
+    }
+
+    &_secondary {
+      @include tag-secondary(
+          (
+            "color": map-get($project-colors, "blue", 100),
+            "background": map-get($project-colors, "blue", 400)
+          ),
+          map-get($project-colors, "blue", 300),
+          (
+            "background": map-get($project-colors, "blue", 400),
+            "border": map-get($project-colors, "blue", 200)
+          )
+      );
+    }
+
+    &_outline {
+    }
+  }
+}
+
+.tag {
+  @include tag;
+
+  &.tag {
+    // types
+
+    &_primary {
+      @include tag-primary;
+    }
+
+    &_floating {
+      @include tag-floating;
+    }
+
+    &_secondary {
+      @include tag-secondary(
+          (
+            "color": map-get($project-colors, "main", 200),
+            "background": map-get($project-colors, "main", 600)
+          ),
+          map-get($project-colors, "main", 500),
+          (
+            "background": map-get($project-colors, "main", 600),
+            "border": map-get($project-colors, "main", 400)
+          )
+      );
+    }
+
+    &_outline {
+      @include tag-outline;
+    }
+
+    // sizes
+
+    &_big {
+      @include btn-big;
+    }
+
+    &_normal {
+      @include btn-normal;
+    }
+
+    &_small {
+      @include btn-small;
+    }
+  }
+
+
+  // customs
+
+  &[custom="blue"] {
+    @include tag-custom-blue();
+  }
+
+}

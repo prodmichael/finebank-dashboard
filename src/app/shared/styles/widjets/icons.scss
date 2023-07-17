@@ -1,0 +1,48 @@
+@import "src/shared/styles/widjets/icon_tools";
+@import "src/shared/styles/vars.animations";
+@import "src/shared/styles/vars.colors";
+
+.mat-icon {
+  @include icon-color(map-get($project-colors, "gradation", 800));
+  &,
+  svg,
+  path {
+    transition: fill $trs, stroke $trs;
+  }
+  &[data-mat-icon-name="logo"] {
+    width: 160px;
+    path:first-child {
+      fill: map-get($project-colors, "gradation", 600);
+    }
+    &.hover {
+      &:hover {
+        path:first-child {
+          fill: map-get($project-colors, "main", 300);
+        }
+      }
+    }
+  }
+  &[data-mat-icon-name="small-triangle"] {
+    width: 6px;
+    path {
+      fill: map-get($project-colors, "gradation", 800);
+    }
+  }
+  &[data-mat-icon-name="long-arrow"] {
+    @include icon-width(40px);
+    @include icon-height(20px);
+    @include icon-color(
+      map-get($project-colors, "text-icons", "dark", "tertiary")
+    );
+  }
+
+  &.small {
+    @include icon-size(16px);
+  }
+  &.normal {
+    @include icon-size(20px);
+  }
+  &.big {
+    @include icon-size(24px);
+  }
+}

@@ -1,0 +1,112 @@
+@import "src/shared/styles/widjets/icon_tools";
+@import "src/shared/styles/layout/typography";
+@import "src/shared/styles/vars.animations";
+@import "src/shared/styles/vars.colors";
+
+$text_selectors: "&, span";
+
+@mixin dropout-point-hover {
+  background-color: map-get($project-colors, "gradation", 700);
+}
+
+@mixin dropout-point-active {
+  background-color: map-get($project-colors, "gradation", 600);
+}
+
+@mixin dropout-point-selected {
+  background-color: map-get($project-colors, "main", 600);
+  $color: map-get($project-colors, "main", 200);
+  #{$text_selectors} {
+    color: $color;
+  }
+  .mat-icon {
+    @include icon-color($color);
+  }
+}
+
+
+@mixin dropout-point-disabled {
+  $color: map-get($project-colors, "text-icons", "dark", "quaternary");
+  #{$text_selectors} {
+    color: $color;
+  }
+
+  .mat-icon {
+    @include icon-color($color);
+  }
+}
+
+@mixin dropout-point-underlined {
+  border-bottom: 2px solid map-get($project-colors, "gradation", 700);
+}
+
+@mixin dropout-point {
+  height: 40px;
+  padding: 0 12px;
+  gap: 6px;
+  cursor: pointer;
+  .mat-icon {
+    @include icon-size(20px)
+  }
+  #{$text_selectors} {
+    @include text;
+    @include text-normal;
+    color: map-get($project-colors, "text-icons", "dark", "secondary");
+    user-select: none;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  width: 100%;
+
+  transition: $trs;
+  background-color: map-get($project-colors, "gradation", 800);
+
+  &_icon-wrapper {
+    display: none;
+  }
+
+  &_left-iconly .dropout-point_left-wrapper {
+    display: block;
+  }
+
+  &_right-iconly .dropout-point_right-wrapper {
+    display: block;
+    margin-left: auto;
+  }
+}
+
+.dropout-point {
+
+  overflow: hidden;
+  white-space: nowrap;
+
+  @include dropout-point;
+
+  &_underlined {
+    @include dropout-point-underlined;
+  }
+
+  .mat-icon {
+    @include icon-color(map-get($project-colors, "text-icons", "dark", "secondary"));
+    @include icon-size(20px)
+  }
+
+  &:active, &_active {
+    @include dropout-point-active;
+  }
+
+  &:not(:disabled):not(&_selected):hover, &_hover {
+    @include dropout-point-hover;
+  }
+
+  &:disabled, &_disabled {
+    @include dropout-point-disabled;
+  }
+
+  &_selected {
+    @include dropout-point-selected;
+  }
+}

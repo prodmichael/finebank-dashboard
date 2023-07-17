@@ -1,0 +1,80 @@
+@import "src/shared/styles/vars.colors";
+@import "src/shared/styles/vars.animations";
+@import "src/shared/styles/widjets/icon_tools";
+
+@mixin checkbox-small {
+  width: 16px;
+  height: 16px;
+  .mat-icon {
+    @include icon-size(12px);
+  }
+}
+
+@mixin checkbox-normal {
+  width: 20px;
+  height: 20px;
+
+  .mat-icon {
+    @include icon-size(16px);
+  }
+}
+
+@mixin checkbox-big {
+  width: 24px;
+  height: 24px;
+  .mat-icon {
+    @include icon-size(20px);
+  }
+}
+
+@mixin checkbox-control {
+  transition: $checkbox;
+  border: 1px solid map-get($project-colors, "gradation", 600);
+  border-radius: 6px;
+  position: relative;
+  &.checked {
+    background: map-get($project-colors, "main", 300);
+    border-color: transparent;
+  }
+}
+
+@mixin checkbox-icon {
+  position: absolute;
+  z-index: 5;
+  opacity: 1;
+  transform: translate(-50%,-50%) rotateX(0deg);
+  top: 50%;
+  left: 50%;
+}
+
+.checkbox {
+  position: relative;
+  cursor: pointer;
+
+  .text {
+    user-select: none;
+  }
+
+  .mat-icon {
+    @include icon-color(map-get($project-colors, "gradation", 800));
+    @include checkbox-icon;
+  }
+
+  &-control {
+    @include checkbox-control;
+    &_small {
+      @include checkbox-small;
+    }
+    &_normal {
+      @include checkbox-normal;
+    }
+    &_big {
+      @include checkbox-big;
+    }
+  }
+
+  &-input {
+    position: absolute;
+    left: -9999px;
+  }
+}

@@ -1,0 +1,7 @@
+@import "dialog";
+@import "src/shared/styles/vars.colors";
+
+.cdk-overlay-backdrop {
+  background: map-get($project-colors, "dark-overlay", 60);
+  backdrop-filter: blur(1px);
+}

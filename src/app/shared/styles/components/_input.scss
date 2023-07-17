@@ -1,0 +1,398 @@
+@import "src/shared/styles/layout/typography";
+@import "src/shared/styles/widjets/icon_tools";
+@import "src/shared/styles/vars.colors";
+@import "src/shared/styles/vars.animations";
+
+@mixin box {
+  position: relative;
+  width: 100%;
+}
+
+@mixin box-label {
+  position: relative;
+  min-height: 22px;
+  &_message {
+    padding-left: 8px;
+    p {
+      margin-top: auto;
+    }
+  }
+  display: none;
+}
+
+div.box {
+  @include box;
+  &-label {
+    @include box-label;
+  }
+  &_with-label {
+    .box-label {
+      &:not(&_message) {
+        display: block;
+        padding-bottom: 4px;
+      }
+    }
+  }
+  &_with-message {
+    .box-label_message {
+      display: flex;
+      padding-top: 4px;
+    }
+  }
+  &_without-controls {
+    .input {
+      padding-bottom: 12px;
+    }
+  }
+}
+
+.left-wrapper {
+  left: 12px;
+}
+.right-wrapper {
+  right: 12px;
+}
+
+@mixin input {
+  border-radius: 8px;
+  width: 100%;
+  @include text;
+  @include text-normal;
+  border: 1px solid transparent;
+  padding: 0 12px;
+  & {
+    transition: $trs;
+  }
+
+  &_icon-wrapper {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: none;
+  }
+
+  &::placeholder {
+    transition: color $trs;
+  }
+
+  & ~ &_icon-wrapper .mat-icon,
+  & ~ &_icon-wrapper {
+    @include icon-size(20px);
+  }
+
+  @include input-iconly(
+    map-get($project-colors, "text-icons", "dark", "quaternary")
+  );
+
+  &::placeholder {
+    color: map-get($project-colors, "text-icons", "dark", "quaternary");
+  }
+  &[type="number"]::-webkit-inner-spin-button,
+  &[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+
+// sizes
+@mixin input-big {
+  height: 48px;
+}
+
+@mixin input-normal {
+  height: 40px;
+}
+
+@mixin input-small {
+  height: 32px;
+}
+
+// types
+
+@mixin input-type-floating {
+  background-color: map-get($project-colors, "gradation", 800);
+
+  &.input {
+    &_default:not(:read-only):hover,
+    &_default.input_select:hover,
+    &_hover {
+      border-color: map-get($project-colors, "gradation", 600);
+      box-shadow: 0 8px 16px map-get($project-colors, "shadow");
+    }
+
+    &_active {
+      box-shadow: 0 8px 16px map-get($project-colors, "shadow");
+      border-color: map-get($project-colors, "main", 300);
+    }
+
+    &_error {
+      box-shadow: 0 8px 16px map-get($project-colors, "shadow");
+      border-color: map-get($project-colors, "red", 200);
+    }
+
+    &_disabled {
+      background-color: map-get($project-colors, "gradation", 700);
+    }
+  }
+}
+
+@mixin input-type-filled {
+  background-color: map-get($project-colors, "gradation", 700);
+
+  &.input {
+    &_default:not(:read-only):hover,
+    &_default.input_select:hover,
+    &_hover {
+      box-shadow: 0 8px 16px map-get($project-colors, "shadow");
+      border-color: map-get($project-colors, "gradation", 600);
+    }
+
+    &_active {
+      border-color: map-get($project-colors, "main", 300);
+    }
+
+    &_error {
+      border-color: map-get($project-colors, "red", 200);
+    }
+  }
+}
+
+@mixin input-type-outlined {
+  background-color: transparent;
+  border-color: map-get($project-colors, "gradation", 600);
+
+  &.input {
+    &_default:not(:read-only):hover,
+    &_default.input_select:hover,
+    &_hover {
+      border-color: map-get($project-colors, "gradation", 500);
+    }
+
+    &_active {
+      border-color: map-get($project-colors, "main", 300);
+    }
+
+    &_error {
+      border-color: map-get($project-colors, "red", 200);
+    }
+
+    &_disabled {
+      background-color: map-get($project-colors, "gradation", 700);
+    }
+  }
+}
+
+// customs
+
+@mixin input-custom-white {
+  &.input {
+    &_type-filled {
+      background-color: map-get($project-colors, "gradation", 800);
+    }
+
+    &_type-outlined {
+    }
+
+    &_type-floating {
+    }
+  }
+}
+
+// params
+
+@mixin input-left-iconly {
+  padding-left: 38px;
+
+  & ~ .left-wrapper {
+    display: block;
+  }
+}
+
+@mixin input-right-iconly {
+  padding-right: 38px;
+
+  & ~ .right-wrapper {
+    display: block;
+  }
+}
+
+@mixin input-with-label {
+  & ~ .right-wrapper {
+    display: block;
+  }
+}
+
+@mixin input-with-message {
+  & ~ .right-wrapper {
+    display: block;
+  }
+}
+
+@mixin input-iconly($default_color) {
+  & ~ &_icon-wrapper .mat-icon,
+  & ~ .textarea-panel .mat-icon {
+    @include icon-color($default_color);
+  }
+}
+
+.input {
+  @include input;
+
+  // statuses
+
+  &_default:not(:read-only):hover,
+  &_default.input_select:hover,
+  &_hover {
+    $color: map-get($project-colors, "text-icons", "dark", "tertiary");
+
+    &::placeholder {
+      color: $color;
+    }
+
+    @include input-iconly($color);
+  }
+
+  &_active {
+    $color: map-get($project-colors, "text-icons", "dark", "primary");
+
+    &::placeholder {
+      //color: $color;
+    }
+
+    color: $color;
+    @include input-iconly($color);
+  }
+
+  &_filled,
+  &_error {
+    $color: map-get($project-colors, "text-icons", "dark", "secondary");
+
+    &::placeholder {
+      color: $color;
+    }
+
+    color: $color;
+    @include input-iconly($color);
+  }
+
+  &_error {
+    &::placeholder {
+      color: map-get($project-colors, "text-icons", "dark", "quaternary");
+    }
+  }
+
+  &_disabled {
+    & ~ &_icon-wrapper,
+    & {
+      cursor: not-allowed;
+    }
+    $color: map-get($project-colors, "text-icons", "dark", "quaternary");
+
+    &::placeholder {
+      color: $color;
+    }
+
+    color: $color;
+    @include input-iconly($color);
+  }
+
+  // types
+  &_type-filled {
+    @include input-type-filled;
+  }
+
+  &_type-outlined {
+    @include input-type-outlined;
+  }
+
+  &_type-floating {
+    @include input-type-floating;
+  }
+
+  // customs
+
+  &[custom="white"] {
+    @include input-custom-white;
+  }
+
+  // sizes
+  &_big {
+    @include input-big;
+  }
+
+  &_normal {
+    @include input-normal;
+  }
+
+  &_small {
+    @include input-small;
+  }
+
+  // params
+  &_left-iconly {
+    @include input-left-iconly;
+  }
+
+  &_right-iconly {
+    @include input-right-iconly;
+  }
+}
+
+@mixin textarea-panel {
+  position: absolute;
+  width: 100%;
+  height: 32px;
+  bottom: 4px;
+  left: 0;
+  padding: 0 12px;
+  display: flex;
+
+  .mat-icon {
+    &[data-mat-icon-name="resize"] {
+      cursor: nwse-resize;
+      display: block;
+    }
+  }
+}
+
+@mixin textarea {
+  padding: 12px 12px 32px 12px;
+  min-height: 100px;
+  height: auto;
+
+  & ~ .input {
+    &_icon-wrapper {
+      top: 12px;
+      transform: unset;
+    }
+  }
+
+  resize: none;
+
+  & ~ .textarea-panel .mat-icon,
+  & ~ .input_icon-wrapper .mat-icon,
+  & ~ .input_icon-wrapper {
+    @include icon-size(16px);
+  }
+}
+
+div.textarea-panel {
+  display: none;
+}
+
+textarea.input {
+  @include textarea;
+
+  & ~ div.textarea {
+    &-panel {
+      @include textarea-panel;
+    }
+  }
+  &_left-iconly {
+    @include input-left-iconly;
+  }
+
+  &_right-iconly {
+    @include input-right-iconly;
+  }
+}

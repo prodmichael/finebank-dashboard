@@ -1,0 +1,44 @@
+@import "src/shared/styles/vars.colors";
+
+.text-center {
+  text-align: center;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.container {
+  width: 100%;
+  max-width: 1248px;
+  margin: 0 auto;
+}
+
+.block {
+  display: block;
+}
+
+.list {
+  overflow-y: scroll;
+}
+
+@mixin item-border-bottom {
+  display: block;
+  &:not(:last-child) {
+    border-bottom: 1px solid map-get($project-colors, "gradation", 600);
+  }
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.separator {
+  background-color: map-get($project-colors, "gradation", 600);
+  &:not(.vertical) {
+    height: 1px;
+  }
+  &.vertical {
+    width: 1px;
+  }
+}

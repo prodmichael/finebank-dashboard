@@ -1,0 +1,13 @@
+@import "src/shared/styles/widjets/icon_tools";
+@import "src/shared/styles/vars.colors";
+
+.table-head {
+  .mat-icon {
+    @include icon-color(map-get($project-colors, "text-icons", "dark", "tertiary"));
+  }
+}
+.table-point {
+  gl-profile-picture {
+    @include icon-size(40px);
+  }
+}

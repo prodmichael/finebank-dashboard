@@ -1,0 +1,234 @@
+@import "src/shared/styles/vars.colors";
+@import "src/shared/styles/vars.animations";
+@import "src/shared/styles/vars.md";
+
+@mixin title-styles {
+  font-family: $second_font;
+  font-weight: 900;
+  margin: 0;
+  transition: $trs;
+  color: map-get($project-colors, "text-icons", "dark", "primary");
+  user-select: text;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @include title-styles;
+}
+
+@mixin h1-desktop {
+  font-size: 48px;
+  line-height: 64px;
+}
+
+@mixin h2-desktop {
+  font-size: 32px;
+  line-height: 40px;
+}
+
+@mixin h3-desktop {
+  font-size: 24px;
+  line-height: 36px;
+}
+
+@mixin h4-desktop {
+  font-size: 20px;
+  line-height: 28px;
+}
+
+@mixin h5-desktop {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+@mixin h1-mobile {
+  font-size: 32px;
+  line-height: 40px;
+}
+
+@mixin h2-mobile {
+  font-size: 28px;
+  line-height: 36px;
+}
+
+@mixin h3-mobile {
+  font-size: 24px;
+  line-height: 32px;
+}
+
+@mixin h4-mobile {
+  font-size: 20px;
+  line-height: 26px;
+}
+
+@mixin h5-mobile {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+h1 {
+  @include h1-desktop;
+  @media (max-width: map-get($md, "t-h")) {
+    @include h1-mobile;
+  }
+}
+h2 {
+  @include h2-desktop;
+  @media (max-width: map-get($md, "t-h")) {
+    @include h2-mobile;
+  }
+}
+h3 {
+  @include h3-desktop;
+  @media (max-width: map-get($md, "t-h")) {
+    @include h3-mobile;
+  }
+}
+h4 {
+  @include h4-desktop;
+  @media (max-width: map-get($md, "t-h")) {
+    @include h4-mobile;
+  }
+}
+h5 {
+  @include h5-desktop;
+  @media (max-width: map-get($md, "t-h")) {
+    @include h5-mobile;
+  }
+}
+
+@mixin weight-regular {
+  font-weight: 400;
+}
+@mixin weight-medium {
+  font-weight: 500;
+}
+@mixin weight-semibold {
+  font-weight: 600;
+}
+@mixin weight-bold {
+  font-weight: 700;
+}
+@mixin weight-extrabold {
+  font-weight: 800;
+}
+
+@mixin text {
+  transition: color $trs;
+  font-family: $main_font;
+  font-weight: 400;
+  color: map-get($project-colors, "text-icons", "dark", "primary");
+  user-select: text;
+}
+@mixin text-24-28 {
+  font-size: 24px;
+  line-height: 28px;
+}
+@mixin text-22-32 {
+  font-size: 22px;
+  line-height: 32px;
+}
+@mixin text-20-28 {
+  font-size: 20px;
+  line-height: 28px;
+}
+@mixin text-18-24 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+@mixin text-16-24 {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+@mixin text-14-20 {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+@mixin text-12-16 {
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.text {
+  @include text;
+  &-24-28 {
+    @include text-24-28;
+  }
+  &-22-32 {
+    @include text-22-32;
+  }
+  &-20-28 {
+    @include text-20-28;
+  }
+  &-18-24 {
+    @include text-18-24;
+  }
+  &-16-24 {
+    @include text-16-24;
+  }
+  &-14-20 {
+    @include text-14-20;
+  }
+  &-12-16 {
+    @include text-12-16;
+  }
+  &_regular {
+    @include weight-regular;
+  }
+  &_medium {
+    @include weight-medium;
+  }
+  &_semibold {
+    @include weight-semibold;
+  }
+  &_bold {
+    @include weight-bold;
+  }
+  &_extrabold {
+    @include weight-extrabold;
+  }
+}
+
+@mixin span-text {
+  font-family: $second_font;
+  font-weight: 400;
+  color: #fff;
+  letter-spacing: 0.015em;
+  @include span-text-default;
+}
+@mixin span-text-default {
+  font-size: 14px;
+  line-height: 16px;
+}
+@mixin span-text-big {
+  font-size: 16px;
+  line-height: 16px;
+}
+@mixin span-text-small {
+  font-size: 12px;
+  line-height: 16px;
+}
+
+span {
+  &.span {
+    @include span-text;
+    &_big {
+      @include span-text-big;
+    }
+    &_small {
+      @include span-text-small;
+    }
+  }
+}
+
+//@media (max-width: 1440px) {
+//  font-size: calc(32px + (72 - 32) * ((100vw - 360px) / (1440 - 360)));
+//  line-height: calc(40px + (80 - 40) * ((100vw - 360px) / (1440 - 360)));
+//}

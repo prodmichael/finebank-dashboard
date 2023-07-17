@@ -1,0 +1,74 @@
+@import "src/shared/styles/layout/typography";
+@import "src/shared/styles/vars.colors";
+@import "src/shared/styles/vars.animations";
+
+.select {
+  &.autocomplete {
+    .input {
+      cursor: text;
+    }
+  }
+
+  .mat-icon[data-mat-icon-name="chevron-down"] {
+    transition: transform $trs;
+  }
+
+  &_expanded {
+    .input {
+      border-radius: 8px 8px 0 0;
+    }
+    .mat-icon[data-mat-icon-name="chevron-down"] {
+      transform: rotateX(180deg);
+    }
+  }
+  &-panel-above {
+    border-color: map-get($project-colors, "gradation", 600);
+    .input {
+      cursor: text;
+      border-radius: 0 0 12px 12px;
+    }
+  }
+}
+
+.cdk-overlay-pane {
+  pointer-events: none;
+}
+// если панелька снизу
+div.mdc-menu-surface.select-panel {
+  max-height: 400px;
+  pointer-events: visible;
+  box-sizing: border-box;
+  border-radius: 0 0 12px 12px;
+  box-shadow: 0 8px 16px map-get($project-colors, "shadow");
+  background-color: map-get($project-colors, "gradation", 800);
+  border: 1px solid map-get($project-colors, "gradation", 600);
+  z-index: 1000;
+  overflow: hidden;
+  .mat-mdc-menu-content {
+    overflow-y: scroll;
+    height: 100%;
+    &::-webkit-scrollbar {
+      background-color: map-get($project-colors, "gradation", 750);
+      width: 6px;
+    }
+    &::-webkit-scrollbar-thumb {
+      border: 2px solid map-get($project-colors, "gradation", 500);
+      border-radius: 4px;
+    }
+  }
+  &.mat-menu-above {
+    border-bottom: none;
+    top: -40px !important;
+    border-radius: 12px 12px 0 0;
+    box-shadow: 0 -8px 16px map-get($project-colors, "shadow");
+  }
+  &:not(.mat-menu-above) {
+    border-top: none;
+  }
+}
+//.cdk-overlay-backdrop.selected-pane-overlay {
+//  background: map-get($project-colors, "dark-overlay", 30);
+//  backdrop-filter: unset;
+//  z-index: 999;
+//  -webkit-tap-highlight-color: unset;
+//}
