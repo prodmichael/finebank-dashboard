@@ -1,0 +1,32 @@
+@import "src/shared/styles/vars.md";
+
+.spacing {
+  &.l1 {
+    height: 8px;
+  }
+  &.l2 {
+    height: 12px;
+  }
+  &.l3 {
+    height: 16px;
+  }
+  &.l4 {
+    height: 24px;
+  }
+  &.l5 {
+    height: 32px;
+  }
+  &.l6 {
+    height: 40px;
+  }
+  &.l7 {
+    height: 56px;
+  }
+  &.l8 {
+    height: 72px;
+  }
+  &.l9 {
+    height: 112px;
+  }
+}
+
