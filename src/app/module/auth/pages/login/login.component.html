@@ -1,4 +1,4 @@
-<div class="flex flex_center flex_column">
+<div class="flex flex_center flex_column full-height">
   <mat-icon class="stroke" svgIcon="logo"></mat-icon>
   <app-spacing type="l8"></app-spacing>
   <form formGroup="form">
@@ -21,15 +21,7 @@
         >
       </div>
       <app-spacing type="l1"></app-spacing>
-      <input class="mat-input" matInput [type]="hide ? 'password' : 'text'" />
-      <button
-        mat-icon-button
-        matSuffix
-        [attr.aria-label]="'Hide password'"
-        [attr.aria-pressed]="hide"
-      >
-        <mat-icon>{{ hide ? "visibility of" : "visibility" }}</mat-icon>
-      </button>
+      <input class="mat-input" matInput type="password" />
     </div>
   </form>
 </div>
