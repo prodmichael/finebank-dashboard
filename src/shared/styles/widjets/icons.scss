@@ -11,15 +11,9 @@
   }
   &[data-mat-icon-name="logo"] {
     width: 276px;
-    path:first-child {
-      fill: map-get($project-colors, "colors", primary);
-    }
-    &.hover {
-      &:hover {
-        path:first-child {
-          fill: map-get($project-colors, "main", 300);
-        }
-      }
+    height: 32px;
+    svg {
+      @include icon-color(map-get($project-colors, "colors", primary));
     }
   }
 

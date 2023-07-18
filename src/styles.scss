@@ -7,11 +7,11 @@ body {
   margin: 0;
 }
 
-// @import "src/shared/styles/_reset";
-// @import "src/shared/styles/layout/main";
-// @import "src/shared/styles/widjets/main";
-// @import "src/shared/styles/modals/main";
-// @import "src/shared/styles/vars.colors";
+@import "src/shared/styles/_reset";
+@import "src/shared/styles/layout/main";
+@import "src/shared/styles/widjets/main";
+@import "src/shared/styles/modals/main";
+@import "src/shared/styles/vars.colors";
 
 img,
 svg {
