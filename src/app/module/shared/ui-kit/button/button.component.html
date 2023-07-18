@@ -1,10 +1,9 @@
 <button
   [disabled]="disabled || loading"
   (press)="press.emit($event)"
-  [attr.custom]="custom"
   class="btn flex flex_center"
   [class.btn_loading]="loading"
-  [ngClass]="'btn_' + size + ' btn_' + type + ' btn_' + custom"
+  [ngClass]="'btn_' + size + ' btn_' + type"
   [class.btn_left-iconly]="iconLeft.children.length > 0"
   [class.btn_right-iconly]="iconRight.children.length > 0"
   [class.btn_only-iconly]="icon.children.length > 0"

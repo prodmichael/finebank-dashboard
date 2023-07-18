@@ -11,6 +11,12 @@
     @include text-16-24;
   }
 }
+@mixin btn-small {
+  height: 16px;
+  span {
+    @include text-12-16;
+  }
+}
 
 @mixin btn {
   border-radius: 4px;
@@ -40,12 +46,37 @@
   }
 }
 
+@mixin btn-link() {
+  $default-color: map-get($project-colors, "colors", primary);
+  background: transparent;
+  &,
+  span {
+    &:not(.c) {
+      color: $default-color;
+    }
+  }
+
+  &,
+  span {
+    @include weight-medium();
+  }
+}
+
 .btn {
   @include btn;
-
+  &.btn {
+    // types
+    &_link {
+      @include btn-link;
+    }
+  }
+  // size
   &.btn {
     &_big {
       @include btn-big;
+    }
+    &_small {
+      @include btn-small;
     }
   }
 }

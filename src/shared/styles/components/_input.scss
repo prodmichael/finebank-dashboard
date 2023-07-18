@@ -1,0 +1,13 @@
+@import "../vars.colors";
+
+form {
+  width: 400px;
+}
+
+.mat-input {
+  height: 48px;
+  padding: 0 16px;
+  border: 1px solid map-get($project-colors, "colors", gray-02);
+  border-radius: 8px;
+  gap: 24px;
+}

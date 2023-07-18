@@ -1,5 +1,35 @@
-<div class="flex flex_column">
+<div class="flex flex_center flex_column">
   <mat-icon class="stroke" svgIcon="logo"></mat-icon>
   <app-spacing type="l8"></app-spacing>
-  <form formGroup="form"></form>
+  <form formGroup="form">
+    <div class="flex flex_column">
+      <p class="text text-16-24 text_medium">Email Address</p>
+      <app-spacing type="l1"></app-spacing>
+      <input
+        class="mat-input"
+        mat-input
+        type="email"
+        placeholder="johndoe@email.com"
+      />
+    </div>
+    <app-spacing type="l4"></app-spacing>
+    <div class="flex flex_column">
+      <div class="flex flex_align-center flex_justify-between">
+        <p class="text text-16-24 text_medium">Password</p>
+        <app-button size="small" type="link"
+          ><span>Forgot Password?</span></app-button
+        >
+      </div>
+      <app-spacing type="l1"></app-spacing>
+      <input class="mat-input" matInput [type]="hide ? 'password' : 'text'" />
+      <button
+        mat-icon-button
+        matSuffix
+        [attr.aria-label]="'Hide password'"
+        [attr.aria-pressed]="hide"
+      >
+        <mat-icon>{{ hide ? "visibility of" : "visibility" }}</mat-icon>
+      </button>
+    </div>
+  </form>
 </div>
