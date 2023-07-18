@@ -10,7 +10,8 @@ const routes: Routes = [
   {
     path: 'auth',
     data: { route: 'auth' },
-    // loadChildren: () => import('./module/auth/'),
+    loadChildren: () =>
+      import('./module/auth/auth.module').then((m) => m.AuthModule),
   },
   {
     path: 'platform',
