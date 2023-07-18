@@ -9,7 +9,7 @@ export class IconsService {
     private domSanitizer: DomSanitizer
   ) {}
 
-  public icons: string[] = ['overview', ''];
+  public icons: string[] = ['overview', 'logo'];
 
   public initIcons(): void {
     this.icons.forEach((name) => {
