@@ -1,11 +1,15 @@
-.custom-checkbox .mat-checkbox-frame {
-  border-color: red; /* Измените цвет границы чекбокса */
+.mat-checkbox-frame {
+  border-color: red;
 }
 
-.custom-checkbox .mat-checkbox-background {
-  background-color: blue; /* Измените цвет фона чекбокса */
+.mdc-checkbox {
+  background-color: map-get($project-colors, "colors", primary);
 }
 
-.custom-checkbox .mat-checkbox-inner-container {
-  color: yellow; /* Измените цвет самого галочки */
+::ng-deep.mdc-checkbox__background {
+  border: none !important;
+}
+
+.mdc-checkbox.mdc-checkbox__checkmark {
+  color: yellow;
 }
