@@ -1,2 +1,2 @@
 export type ButtonSize = 'big' | 'small' | 'small';
-export type ButtonType = 'link';
+export type ButtonType = 'primary' | 'link';

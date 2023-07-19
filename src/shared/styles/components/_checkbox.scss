@@ -1,15 +1,17 @@
-.mat-checkbox-frame {
-  border-color: red;
+.example-margin {
+  span {
+    margin: 0 16px;
+  }
 }
 
-.mdc-checkbox {
-  background-color: map-get($project-colors, "colors", primary);
+.mat-mdc-checkbox {
 }
 
-::ng-deep.mdc-checkbox__background {
-  border: none !important;
-}
-
-.mdc-checkbox.mdc-checkbox__checkmark {
-  color: yellow;
+::ng-deep
+  .mat-mdc-checkbox
+  .mat-checkbox
+  .mdc-checkbox__native-control:enabled
+  ~ .mdc-checkbox__background
+  .mdc-checkbox__checkmark {
+  color: #ffffffff !important;
 }

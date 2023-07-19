@@ -46,6 +46,14 @@
   }
 }
 
+@mixin btn-primary() {
+  background-color: map-get($project-colors, "colors", primary);
+  &,
+  span {
+    @include weight-semibold();
+  }
+}
+
 @mixin btn-link() {
   $default-color: map-get($project-colors, "colors", primary);
   background: transparent;
@@ -66,6 +74,9 @@
   @include btn;
   &.btn {
     // types
+    &_primary {
+      @include btn-primary;
+    }
     &_link {
       @include btn-link;
     }

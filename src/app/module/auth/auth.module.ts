@@ -2,16 +2,22 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
+import { ButtonModule } from '../shared/ui-kit/button/button.module';
+import { CheckboxModule } from '../shared/ui-kit/checkbox/checkbox.module';
 import { AppSpacingModule } from '../shared/ui-kit/spacing/app-spacing.module';
 import { AuthRoutingModule } from './auth-routing.module';
 import { AuthComponent } from './auth.component';
+import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { LoginComponent } from './pages/login/login.component';
 import { SignupComponent } from './pages/signup/signup.component';
-import { ButtonModule } from '../shared/ui-kit/button/button.module';
-import { MatCheckboxModule } from '@angular/material/checkbox';
 
 @NgModule({
-  declarations: [AuthComponent, LoginComponent, SignupComponent],
+  declarations: [
+    AuthComponent,
+    LoginComponent,
+    SignupComponent,
+    ForgotPasswordComponent,
+  ],
   imports: [
     CommonModule,
     AuthRoutingModule,
@@ -19,7 +25,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     AppSpacingModule,
     MatInputModule,
     ButtonModule,
-    MatCheckboxModule,
+    CheckboxModule,
   ],
 })
 export class AuthModule {}

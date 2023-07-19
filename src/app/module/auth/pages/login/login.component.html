@@ -16,7 +16,7 @@
     <div class="flex flex_column">
       <div class="flex flex_align-center flex_justify-between">
         <p class="text text-16-24 text_medium">Password</p>
-        <app-button size="small" type="link"
+        <app-button routerLink="forgotpassword" size="small" type="link"
           ><span>Forgot Password?</span></app-button
         >
       </div>
@@ -27,11 +27,24 @@
         type="{{ passwordVisible ? 'text' : 'password' }}"
       />
       <app-spacing type="l5"></app-spacing>
-      <mat-checkbox class="example-margin custom-checkbox"
+      <app-checkbox
         ><span class="text text-16-24 text_light t-default-black"
           >Keep me signed in</span
-        ></mat-checkbox
+        ></app-checkbox
       >
+      <app-spacing type="l3"></app-spacing>
+      <app-button size="big" type="primary"
+        ><span class="text text-16-24 t-white">Login</span></app-button
+      >
+      <app-spacing type="l4"></app-spacing>
+      <div class="teg flex flex_center">
+        <p
+          class="teg_line flex flex_center text text-14-20 text_regular t-gray-01"
+        >
+          or sign in with
+        </p>
+      </div>
+      <app-spacing type="l4"></app-spacing>
     </div>
   </form>
 </div>

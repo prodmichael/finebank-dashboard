@@ -1,13 +1,14 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
-  encapsulation: ViewEncapsulation.None,
 })
 export class LoginComponent {
+  constructor(private router: Router) {}
   form!: FormGroup;
   passwordVisible: boolean = false;
 

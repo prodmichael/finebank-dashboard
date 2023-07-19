@@ -1,5 +1,11 @@
-.example-margin {
-  span {
-    margin: 0 16px;
+@import "../../../../../shared/styles/vars.colors";
+
+.teg {
+  height: 0.5px;
+  background: map-get($project-colors, "special-colors", bg);
+  &_line {
+    width: 112px;
+    height: 36px;
+    background: map-get($project-colors, "special-colors", white);
   }
 }
