@@ -12,12 +12,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { SignupComponent } from './pages/signup/signup.component';
 
 @NgModule({
-  declarations: [
-    AuthComponent,
-    LoginComponent,
-    SignupComponent,
-    ForgotPasswordComponent,
-  ],
+  declarations: [LoginComponent, SignupComponent, ForgotPasswordComponent],
   imports: [
     CommonModule,
     AuthRoutingModule,

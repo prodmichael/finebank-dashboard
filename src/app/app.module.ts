@@ -6,16 +6,18 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { RouterModule } from '@angular/router';
+import { AuthComponent } from './module/auth/auth.component';
+import { AuthModule } from './module/auth/auth.module';
 import { IconsService } from './services/icons.service';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, AuthComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    AuthModule,
   ],
   providers: [IconsService],
   bootstrap: [AppComponent],
