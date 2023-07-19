@@ -8,5 +8,9 @@ import { FormGroup } from '@angular/forms';
 })
 export class LoginComponent {
   form!: FormGroup;
-  hide!: boolean;
+  passwordVisible: boolean = false;
+
+  togglePasswordVisibility() {
+    this.passwordVisible = !this.passwordVisible;
+  }
 }

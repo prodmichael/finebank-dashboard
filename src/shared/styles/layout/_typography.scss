@@ -2,6 +2,9 @@
 @import "../vars.animations";
 @import "../vars.md";
 
+@mixin weight-light {
+  font-weight: 300;
+}
 @mixin weight-regular {
   font-weight: 400;
 }
@@ -82,6 +85,9 @@
   }
   &-12-16 {
     @include text-12-16;
+  }
+  &_light {
+    @include weight-light;
   }
   &_regular {
     @include weight-regular;

@@ -8,6 +8,7 @@ import { AuthComponent } from './auth.component';
 import { LoginComponent } from './pages/login/login.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { ButtonModule } from '../shared/ui-kit/button/button.module';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 @NgModule({
   declarations: [AuthComponent, LoginComponent, SignupComponent],
@@ -18,6 +19,7 @@ import { ButtonModule } from '../shared/ui-kit/button/button.module';
     AppSpacingModule,
     MatInputModule,
     ButtonModule,
+    MatCheckboxModule,
   ],
 })
 export class AuthModule {}
