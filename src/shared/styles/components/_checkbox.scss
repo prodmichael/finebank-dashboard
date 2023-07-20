@@ -4,14 +4,16 @@
   }
 }
 
-.mat-mdc-checkbox {
+.mdc-checkbox__background {
+  width: 20px !important;
+  height: 20px !important;
+  background-color: map-get($project-colors, "colors", primary) !important;
+  border: 2px solid map-get($project-colors, "colors", primary) !important;
 }
 
-::ng-deep
-  .mat-mdc-checkbox
-  .mat-checkbox
+.mdc-checkbox
   .mdc-checkbox__native-control:enabled
   ~ .mdc-checkbox__background
   .mdc-checkbox__checkmark {
-  color: #ffffffff !important;
+  color: #fff !important;
 }
