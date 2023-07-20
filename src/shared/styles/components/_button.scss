@@ -70,6 +70,15 @@
   }
 }
 
+// custom
+@mixin btn-custom-gray() {
+  &.btn {
+    &_link {
+      background-color: map-get($project-colors, "colors", gray-04);
+    }
+  }
+}
+
 .btn {
   @include btn;
   &.btn {
@@ -91,3 +100,5 @@
     }
   }
 }
+
+// customs
