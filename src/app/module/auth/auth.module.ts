@@ -22,6 +22,7 @@ import { SignupComponent } from './pages/signup/signup.component';
     ButtonModule,
     CheckboxModule,
     AuthContentModule,
+    MatInputModule,
   ],
 })
 export class AuthModule {}
