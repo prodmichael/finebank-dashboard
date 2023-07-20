@@ -17,7 +17,9 @@
       <div class="flex flex_align-center flex_justify-between">
         <p class="text text-16-24 text_medium">Password</p>
         <app-button routerLink="/forgotpassword" size="small" type="link"
-          ><span>Forgot Password?</span></app-button
+          ><span class="text text-12-16 t-primary text_medium"
+            >Forgot Password?</span
+          ></app-button
         >
       </div>
       <app-spacing type="l1"></app-spacing>
@@ -45,9 +47,11 @@
         </p>
       </div>
       <app-spacing type="l4"></app-spacing>
-      <app-button size="big" type="link">
+      <app-button size="big" type="link" custom="gray">
         <mat-icon btn-left-icon svgIcon="button-google"></mat-icon>
-        <span>Continue with Google</span>
+        <span class="text text-16-24 text_regular t-gray-02"
+          >Continue with Google</span
+        >
       </app-button>
     </div>
   </form>

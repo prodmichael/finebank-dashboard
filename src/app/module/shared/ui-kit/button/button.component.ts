@@ -1,5 +1,9 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { ButtonSize, ButtonType } from './interfaces/button.inteface';
+import {
+  ButtonCustom,
+  ButtonSize,
+  ButtonType,
+} from './interfaces/button.interface';
 
 @Component({
   selector: 'app-button',
@@ -9,6 +13,7 @@ import { ButtonSize, ButtonType } from './interfaces/button.inteface';
 export class ButtonComponent {
   @Input() size: ButtonSize = 'big';
   @Input() type: ButtonType = 'link';
+  @Input() custom: ButtonCustom = '';
   @Input() rounded!: boolean;
   @Input() disabled!: boolean;
   @Input() loading!: boolean;

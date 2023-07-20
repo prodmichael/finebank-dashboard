@@ -1,6 +1,7 @@
 <button
   [disabled]="disabled || loading"
   (press)="press.emit($event)"
+  [attr.custom]="custom"
   class="btn flex flex_center"
   [class.btn_loading]="loading"
   [ngClass]="'btn_' + size + ' btn_' + type"

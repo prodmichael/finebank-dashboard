@@ -10,6 +10,9 @@
   span {
     @include text-16-24;
   }
+  .mat-icon {
+    @include icon-size(24px);
+  }
 }
 @mixin btn-small {
   height: 16px;
@@ -57,17 +60,6 @@
 @mixin btn-link() {
   $default-color: map-get($project-colors, "colors", primary);
   background: transparent;
-  &,
-  span {
-    &:not(.c) {
-      color: $default-color;
-    }
-  }
-
-  &,
-  span {
-    @include weight-medium();
-  }
 }
 
 // custom
@@ -99,6 +91,9 @@
       @include btn-small;
     }
   }
-}
 
-// customs
+  // customs
+  &[custom="gray"] {
+    @include btn-custom-gray;
+  }
+}
