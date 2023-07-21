@@ -15,9 +15,9 @@
         *ngIf="form.get('email')?.invalid && form.get('email')?.touched"
         class="validation"
       >
-        <div class="text text-12-16 text_semibold t-primary">
-          Please, enter correct email
-        </div>
+        <p class="text text-12-16 text_semibold t-primary">
+          please, enter correct email
+        </p>
       </div>
     </div>
     <app-spacing type="l4"></app-spacing>
@@ -37,8 +37,13 @@
         matInput
         type="{{ passwordVisible ? 'text' : 'password' }}"
       />
-      <div class="validation">
-        <p class="text text-12-16 text_semibold t-primary"></p>
+      <div
+        *ngIf="form.get('password')?.invalid && form.get('password')?.touched"
+        class="validation"
+      >
+        <p class="text text-12-16 text_semibold t-primary">
+          please enter your password
+        </p>
       </div>
       <app-spacing type="l5"></app-spacing>
       <app-checkbox

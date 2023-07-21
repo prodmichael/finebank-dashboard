@@ -29,9 +29,10 @@ export class LoginComponent implements OnInit {
   }
 
   submit() {
-    if (this.form.invalid) {
+    if (this.form.valid) {
       const formData = { ...this.form.value };
       console.log(formData);
+      // this.form.reset();
     }
     const user: User = {
       email: this.form.value.email,
