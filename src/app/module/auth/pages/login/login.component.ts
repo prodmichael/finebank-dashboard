@@ -11,7 +11,6 @@ import { User } from '../../interfaces/auth.interfaces';
 export class LoginComponent implements OnInit {
   constructor(private router: Router) {}
   form!: FormGroup;
-  submitted!: boolean;
   passwordVisible: boolean = false;
 
   togglePasswordVisibility() {
