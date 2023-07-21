@@ -1,10 +1,11 @@
 <app-auth-content>
   <app-spacing type="l4"></app-spacing>
-  <form formGroup="form">
+  <form [formGroup]="form" (ngSubmit)="submit()">
     <div class="flex flex_column">
       <p class="text text-16-24 text_medium">Email Address</p>
       <app-spacing type="l1"></app-spacing>
       <input
+        formControlName="email"
         class="mat-input"
         mat-input
         type="email"
@@ -23,6 +24,7 @@
       </div>
       <app-spacing type="l1"></app-spacing>
       <input
+        formControlName="password"
         class="mat-input"
         matInput
         type="{{ passwordVisible ? 'text' : 'password' }}"

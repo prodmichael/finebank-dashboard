@@ -10,6 +10,7 @@ import { AuthRoutingModule } from './auth-routing.module';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { LoginComponent } from './pages/login/login.component';
 import { SignupComponent } from './pages/signup/signup.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [LoginComponent, SignupComponent, ForgotPasswordComponent],
@@ -23,6 +24,8 @@ import { SignupComponent } from './pages/signup/signup.component';
     CheckboxModule,
     AuthContentModule,
     MatInputModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
 })
 export class AuthModule {}
