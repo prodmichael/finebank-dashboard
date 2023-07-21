@@ -18,6 +18,11 @@
   }
 }
 
+@mixin btn-disabled {
+  cursor: not-allowed;
+  background-color: #337b73;
+}
+
 @mixin btn {
   border-radius: 4px;
   cursor: pointer;
@@ -38,6 +43,12 @@
 
   &_icon-wrapper {
     display: none;
+  }
+
+  &.btn {
+    &:disabled {
+      @include btn-disabled;
+    }
   }
 
   .mat-icon,

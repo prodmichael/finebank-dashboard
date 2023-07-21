@@ -11,4 +11,7 @@ form {
   border: 1px solid map-get($project-colors, "colors", gray-02);
   border-radius: 8px;
   gap: 24px;
+  &.ng-invalid.ng-touched {
+    border-color: #ffdcdc;
+  }
 }

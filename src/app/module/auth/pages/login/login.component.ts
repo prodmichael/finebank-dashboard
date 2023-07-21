@@ -26,15 +26,13 @@ export class LoginComponent implements OnInit {
         Validators.minLength(8),
       ]),
     });
-    console.log(this.form);
   }
 
   submit() {
     if (this.form.invalid) {
-      return;
+      const formData = { ...this.form.value };
+      console.log(formData);
     }
-    this.submitted = true;
-
     const user: User = {
       email: this.form.value.email,
       password: this.form.value.password,
