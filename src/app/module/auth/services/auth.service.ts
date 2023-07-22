@@ -1,11 +1,26 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { User } from './../interfaces/auth.interfaces';
 
 @Injectable()
 export class AuthService {
-  constructor(private afAuth: AngularFireAuthModule) {}
+  constructor(private http: HttpClient) {}
 
-  // registerUser(email: string, password: string) {
-  //   return this.afAuth.createUserWithEmailAndPassword(email, password);
-  // }
+  get token(): string {
+    return '';
+  }
+
+  login(user: User) {
+    this.http.post('', user);
+  }
+
+  signUp() {}
+
+  logout() {}
+
+  isAuthenticated(): boolean {
+    return !!this.token;
+  }
+
+  private setToken() {}
 }

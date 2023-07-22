@@ -37,7 +37,11 @@
         <a class="text t-primary"> terms of service.</a>
       </p>
       <app-spacing type="l3"></app-spacing>
-      <app-button [disabled]="form.invalid" size="big" type="primary"
+      <app-button
+        (click)="register()"
+        [disabled]="form.invalid"
+        size="big"
+        type="primary"
         ><span class="text text-16-24 t-white">Sign up</span></app-button
       >
       <app-spacing type="l4"></app-spacing>

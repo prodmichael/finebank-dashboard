@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { User } from '../../interfaces/auth.interfaces';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -9,7 +10,7 @@ import { User } from '../../interfaces/auth.interfaces';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
-  constructor(private router: Router) {}
+  constructor(private authService: AuthService, private router: Router) {}
   form!: FormGroup;
   passwordVisible: boolean = false;
 
