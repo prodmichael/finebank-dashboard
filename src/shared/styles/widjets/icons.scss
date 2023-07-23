@@ -16,6 +16,15 @@
       @include icon-color(map-get($project-colors, "colors", primary));
     }
   }
+  &[data-mat-icon-name="logo-white"] {
+    width: 224px;
+    height: 32px;
+    svg {
+      @include icon-color(
+        map-get($project-colors, "special-colors", dark-white)
+      );
+    }
+  }
 
   &.small {
     @include icon-size(16px);

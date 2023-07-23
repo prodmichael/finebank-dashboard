@@ -1,0 +1,17 @@
+@import "../../../../../shared/styles/vars.colors";
+@import "../../../../../shared/styles/widjets/icon_tools";
+
+.mat-icon {
+  &[data-mat-icon-name="logo"] {
+    width: 224px;
+  }
+  svg {
+    @include icon-color(map-get($project-colors, "special-colors", dark-white));
+  }
+}
+
+app-button {
+  .btn {
+    justify-content: baseline;
+  }
+}
