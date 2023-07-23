@@ -1,0 +1,11 @@
+<button
+  (press)="press.emit($event)"
+  class="btn flex flex_align-center"
+  [ngClass]="'btn_' + size"
+  [class.btn_left-iconly]="iconLeft.children.length > 0"
+>
+  <div class="btn_icon-wrapper btn_left-wrapper" #iconLeft>
+    <ng-content select="[btn-left-icon]"></ng-content>
+  </div>
+  <ng-content></ng-content>
+</button>

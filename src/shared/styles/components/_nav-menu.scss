@@ -1,0 +1,40 @@
+@import "src/shared/styles/widjets/icon_tools";
+@import "src/shared/styles/vars.colors";
+@import "src/shared/styles/vars.animations";
+@import "src/shared/styles/layout/typography";
+
+@mixin btn-normal {
+  height: 48px;
+  padding: 0 16px;
+  gap: 12px;
+  span {
+    @include text-16-24;
+  }
+}
+
+@mixin btn {
+  width: 100%;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: transparent;
+  &_left-iconly .btn_left-wrapper {
+    display: block;
+  }
+
+  .mat-icon,
+  &_icon-wrapper {
+    @include icon-size(24px);
+    fill: map-get($project-colors, "special-colors", bg);
+  }
+}
+
+.btn {
+  @include btn;
+
+  // size
+  &.btn {
+    &_normal {
+      @include btn-normal;
+    }
+  }
+}
