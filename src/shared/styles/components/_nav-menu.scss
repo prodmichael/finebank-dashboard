@@ -26,6 +26,23 @@
     @include icon-size(24px);
     fill: map-get($project-colors, "special-colors", bg);
   }
+
+  &:hover {
+    span {
+      color: #ffffff;
+    }
+  }
+  &:active,
+  &:focus {
+    background: map-get($project-colors, "colors", primary);
+    color: #ffffff;
+    .mat-icon {
+      stroke: #ffffff;
+    }
+    span {
+      font-weight: 600;
+    }
+  }
 }
 
 .btn {
