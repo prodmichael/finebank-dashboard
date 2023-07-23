@@ -10,9 +10,10 @@ import { AuthService } from '../../services/auth.service';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(public authService: AuthService, private router: Router) {}
   form!: FormGroup;
   passwordVisible: boolean = false;
+  submitted = false;
 
   togglePasswordVisibility() {
     this.passwordVisible = !this.passwordVisible;
@@ -29,6 +30,7 @@ export class LoginComponent implements OnInit {
   }
 
   submit() {
+    this.submitted = true;
     if (this.form.valid) {
       const formData = { ...this.form.value };
       console.log(formData);
@@ -42,6 +44,7 @@ export class LoginComponent implements OnInit {
     this.authService.login(user).subscribe(() => {
       this.form.reset();
       this.router.navigate(['platform', 'overview']);
+      this.submitted = false;
     });
   }
 }

@@ -1,6 +1,9 @@
 <app-auth-content>
   <app-spacing type="l4"></app-spacing>
   <form [formGroup]="form" (ngSubmit)="submit()">
+    <!-- <div class="alert alert-danger" *ngIf="authService.error$ | async as error">
+      {{ error }}
+    </div> -->
     <div class="flex flex_column">
       <p class="text text-16-24 text_medium">Email Address</p>
       <app-spacing type="l1"></app-spacing>
@@ -52,7 +55,10 @@
         ></app-checkbox
       >
       <app-spacing type="l3"></app-spacing>
-      <app-button [disabled]="form.invalid" size="big" type="primary"
+      <app-button
+        [disabled]="form.invalid || submitted"
+        size="big"
+        type="primary"
         ><span class="text text-16-24 t-white">Login</span></app-button
       >
       <app-spacing type="l4"></app-spacing>
