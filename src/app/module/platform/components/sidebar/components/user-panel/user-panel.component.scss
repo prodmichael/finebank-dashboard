@@ -1,0 +1,6 @@
+@import "../../../../../../../shared/styles/vars.colors";
+
+.user-panel {
+  padding: 32px 0;
+  border-top: 1px solid map-get($project-colors, "special-colors", dark-white);
+}
