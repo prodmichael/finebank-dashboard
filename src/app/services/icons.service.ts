@@ -21,6 +21,7 @@ export class IconsService {
     'goal',
     'settings',
     'logout',
+    'menu',
   ];
 
   public initIcons(): void {

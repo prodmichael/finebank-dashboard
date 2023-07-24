@@ -1,0 +1,27 @@
+@import "../../../../../shared/styles/widjets/icon_tools";
+
+:host {
+  border-radius: 32px;
+  overflow: hidden;
+  @include icon-size(32px);
+}
+
+@mixin profile-picture {
+  width: 100%;
+  height: 100%;
+  border-radius: 32px;
+  background-color: #ffff;
+  position: relative;
+}
+
+@mixin profile-picture-img {
+  object-fit: cover;
+  object-position: center;
+}
+
+.profile-picture {
+  @include profile-picture;
+  img {
+    @include profile-picture-img;
+  }
+}
