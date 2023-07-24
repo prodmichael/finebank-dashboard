@@ -1,7 +1,7 @@
 <button
   (press)="press.emit($event)"
-  class="btn flex flex_align-center"
-  [ngClass]="'btn_' + size"
+  class="nav-menu flex flex_align-center"
+  [ngClass]="'nav-menu_' + size + ' nav-menu_' + type"
   [class.btn_left-iconly]="iconLeft.children.length > 0"
 >
   <div class="btn_icon-wrapper btn_left-wrapper" #iconLeft>

@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { NavMenuSize } from './interfaces/nav-menu.interface';
+import { NavMenuSize, NavMenuType } from './interfaces/nav-menu.interface';
 
 @Component({
   selector: 'app-nav-menu',
@@ -8,5 +8,6 @@ import { NavMenuSize } from './interfaces/nav-menu.interface';
 })
 export class NavMenuComponent {
   @Input() size: NavMenuSize = 'normal';
+  @Input() type: NavMenuType = 'default';
   @Output() press: EventEmitter<any> = new EventEmitter<any>();
 }
