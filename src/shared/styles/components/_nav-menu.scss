@@ -26,16 +26,7 @@
     @include icon-size(24px);
     fill: map-get($project-colors, "special-colors", bg);
   }
-}
-
-@mixin nav-menu-default() {
-  &:hover {
-    span {
-      color: #ffffff;
-    }
-  }
-  &:active,
-  &:focus {
+  &.active {
     background: map-get($project-colors, "colors", primary);
     color: #ffffff;
     .mat-icon {
@@ -47,6 +38,15 @@
     }
   }
 }
+
+@mixin nav-menu-default() {
+  &:hover {
+    span {
+      color: #ffffff;
+    }
+  }
+}
+
 @mixin nav-menu-link() {
   background-color: map-get($project-colors, "special-colors", dark-white);
 

@@ -1,1 +1,13 @@
-<div class="container header flex flex_align-center">dfsfds</div>
+<div class="container header flex flex_align-center">
+  <div class="flex flex_align-center gap-24" #marginRight>
+    <p class="text text-24-28 text_bold t-black">
+      <ng-content select="[header-title]"></ng-content>
+    </p>
+    <div class="flex flex_align-center">
+      <mat-icon svgIcon="chevrons-right"></mat-icon>
+      <p class="text text-14-20 text_regular t-gray-02">
+        {{ currentDate | date : "MMM d, y" }}
+      </p>
+    </div>
+  </div>
+</div>

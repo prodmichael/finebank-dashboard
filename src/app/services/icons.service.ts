@@ -23,6 +23,8 @@ export class IconsService {
     'logout',
     'menu',
     'search',
+    'chevrons-right',
+    'clarity',
   ];
 
   public initIcons(): void {
