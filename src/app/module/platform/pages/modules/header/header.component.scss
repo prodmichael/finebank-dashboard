@@ -1,0 +1,6 @@
+@import "../../../../../../shared/styles/vars.colors";
+
+.header {
+  height: 88px;
+  border-bottom: 1px solid map-get($project-colors, "colors", gray-05);
+}

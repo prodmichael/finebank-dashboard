@@ -22,6 +22,7 @@ export class IconsService {
     'settings',
     'logout',
     'menu',
+    'search',
   ];
 
   public initIcons(): void {
