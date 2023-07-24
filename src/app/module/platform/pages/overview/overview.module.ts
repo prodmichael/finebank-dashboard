@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { AppSpacingModule } from 'src/app/module/shared/ui-kit/spacing/app-spacing.module';
-import { CardModule } from '../modules/card/card.module';
+import { CardModule } from '../../../shared/ui-kit/card/card.module';
 import { HeaderModule } from '../modules/header/header.module';
 import { OverviewCardComponent } from './components/overview-card/overview-card-balance.component';
 import { OverviewRoutingModule } from './overview-routing.module';
