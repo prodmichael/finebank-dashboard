@@ -1,5 +1,15 @@
 @import "../../../shared/styles/vars.colors";
 
+:host {
+  height: 100%;
+}
+
+.content {
+  width: 100%;
+  padding: 0 24px 34px 24px;
+  background-color: map-get($project-colors, "colors", gray-05);
+}
+
 app-sidebar {
   width: 100%;
   max-width: 280px;
