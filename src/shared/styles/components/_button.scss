@@ -79,6 +79,18 @@
   }
 }
 
+@mixin btn-custom-white() {
+  &.btn {
+    &_link {
+      width: 24px;
+      height: 24px;
+      padding: 4px;
+      border-radius: 20px;
+      background-color: #fff;
+    }
+  }
+}
+
 .btn {
   @include btn;
   &.btn {
@@ -103,5 +115,8 @@
   // customs
   &[custom="gray"] {
     @include btn-custom-gray;
+  }
+  &[custom="white"] {
+    @include btn-custom-white;
   }
 }
