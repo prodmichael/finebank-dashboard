@@ -7,12 +7,16 @@ import { OverviewCardComponent } from './components/overview-card/overview-card-
 import { OverviewRoutingModule } from './overview-routing.module';
 import { OverviewComponent } from './overview.component';
 import { OverviewHomeComponent } from './pages/overview-home/overview-home.component';
+import { CreditCardComponent } from './components/credit-card/credit-card.component';
+import { ButtonModule } from 'src/app/module/shared/ui-kit/button/button.module';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
     OverviewComponent,
     OverviewHomeComponent,
     OverviewCardComponent,
+    CreditCardComponent,
   ],
   imports: [
     CommonModule,
@@ -20,6 +24,8 @@ import { OverviewHomeComponent } from './pages/overview-home/overview-home.compo
     HeaderModule,
     AppSpacingModule,
     CardModule,
+    ButtonModule,
+    MatIconModule,
   ],
 })
 export class OverviewModule {}
