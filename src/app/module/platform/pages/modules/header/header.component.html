@@ -1,4 +1,4 @@
-<div class="container header flex flex_align-center">
+<div class="container header flex flex_align-center flex_justify-between">
   <div class="flex flex_align-center gap-24" #marginRight>
     <p class="text text-24-28 text_bold t-black">
       <ng-content select="[header-title]"></ng-content>
@@ -9,5 +9,10 @@
         {{ currentDate | date : "MMM d, y" }}
       </p>
     </div>
+  </div>
+  <div class="wrapper flex flex_align-center gap-40">
+    <mat-icon svgIcon="clarity"></mat-icon>
+    <input class="mat-input" placeholder="Search here" />
+    <mat-icon class="right-wrapper" svgIcon="search"></mat-icon>
   </div>
 </div>

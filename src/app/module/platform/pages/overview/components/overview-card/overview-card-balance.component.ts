@@ -5,4 +5,6 @@ import { Component } from '@angular/core';
   templateUrl: './overview-card-balance.component.html',
   styleUrls: ['./overview-card-balance.component.scss'],
 })
-export class OverviewCardComponent {}
+export class OverviewCardComponent {
+  isActive = true;
+}

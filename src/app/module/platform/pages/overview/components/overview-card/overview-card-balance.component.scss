@@ -1,1 +1,6 @@
+@import "../../../../../../../shared/styles/vars.colors";
 
+.border {
+  padding-bottom: 12px;
+  border-bottom: 1px solid map-get($project-colors, "colors", gray-06);
+}
