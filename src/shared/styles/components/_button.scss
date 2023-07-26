@@ -91,6 +91,29 @@
   }
 }
 
+@mixin btn-custom-default-link() {
+  &.btn {
+    &_link {
+      $color: map-get($project-colors, "colors", default-black);
+      padding: 0;
+      height: 20px;
+      gap: 4px;
+      background-color: transparent;
+      &:hover {
+        $color-hover: map-get($project-colors, "colors", gray-04);
+        color: $color-hover;
+        .mat-icon {
+          @include icon-color($color-hover);
+        }
+      }
+      .mat-icon {
+        @include icon-size(16px);
+        @include icon-color($color);
+      }
+    }
+  }
+}
+
 .btn {
   @include btn;
   &.btn {
@@ -118,5 +141,8 @@
   }
   &[custom="white"] {
     @include btn-custom-white;
+  }
+  &[custom="default-link"] {
+    @include btn-custom-default-link;
   }
 }

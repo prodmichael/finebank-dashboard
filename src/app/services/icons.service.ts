@@ -26,6 +26,9 @@ export class IconsService {
     'chevrons-right',
     'clarity',
     'arrow-up-right',
+    'chevron-right',
+    'chevron-left',
+    'chevron-right',
   ];
 
   public initIcons(): void {
