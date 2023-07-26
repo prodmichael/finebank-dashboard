@@ -8,3 +8,14 @@
 app-credit-card {
   margin-bottom: 20px;
 }
+
+.indicator {
+  width: 8px;
+  height: 8px;
+  background-color: map-get($project-colors, "colors", gray-04);
+  border-radius: 50%;
+
+  &.active {
+    background-color: map-get($project-colors, "colors", primary);
+  }
+}

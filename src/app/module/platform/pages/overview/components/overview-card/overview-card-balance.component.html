@@ -38,15 +38,22 @@
         type="link"
       >
         <mat-icon class="stroke" svgIcon="chevron-left"></mat-icon>
-        <span class="text text-14-20 text_bold">Previous</span>
+        <span class="text text-14-20 text_medium">Previous</span>
       </app-button>
+      <div class="flex flex_align-center gap-8">
+        <span
+          class="indicator"
+          *ngFor="let indicator of visibleIndicators"
+          [class.active]="indicator === currentIndicatorIndex"
+        ></span>
+      </div>
       <app-button
         custom="default-link"
         size="small"
         (click)="nextCard()"
         type="link"
       >
-        <span class="text text-14-20 text_bold">Next</span>
+        <span class="text text-14-20 text_medium">Next</span>
         <mat-icon class="stroke" svgIcon="chevron-right"></mat-icon>
       </app-button>
     </div>
