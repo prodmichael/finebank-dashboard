@@ -38,8 +38,7 @@
       </p>
       <app-spacing type="l3"></app-spacing>
       <app-button
-        (click)="register()"
-        [disabled]="form.invalid"
+        [disabled]="form.invalid || submitted"
         size="big"
         type="primary"
         ><span class="text text-16-24 t-white">Sign up</span></app-button

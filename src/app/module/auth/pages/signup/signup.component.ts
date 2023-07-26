@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { newUser } from '../../interfaces/auth.interfaces';
 import { AuthService } from '../../services/auth.service';
 
 @Component({
@@ -9,10 +11,9 @@ import { AuthService } from '../../services/auth.service';
 })
 export class SignupComponent implements OnInit {
   form!: FormGroup;
-  email!: string;
-  password!: string;
+  submitted = false;
 
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService, private router: Router) {}
 
   ngOnInit() {
     this.form = new FormGroup({
@@ -25,12 +26,23 @@ export class SignupComponent implements OnInit {
     });
   }
 
-  register() {}
-
   submit() {
+    this.submitted = true;
     if (this.form.valid) {
       const formData = { ...this.form.value };
       console.log(formData);
     }
+
+    const user: newUser = {
+      name: this.form.value.name,
+      email: this.form.value.email,
+      password: this.form.value.password,
+    };
+
+    this.authService.signupNewUser(user).subscribe(() => {
+      this.form.reset();
+      this.router.navigate(['platform', 'overview']);
+      this.submitted = false;
+    });
   }
 }

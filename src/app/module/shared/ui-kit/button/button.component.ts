@@ -13,7 +13,7 @@ import {
 export class ButtonComponent {
   @Input() size: ButtonSize = 'big';
   @Input() type: ButtonType = 'link';
-  @Input() custom: ButtonCustom = 'white';
+  @Input() custom: ButtonCustom = 'default';
   @Input() rounded!: boolean;
   @Input() disabled!: boolean;
   @Input() loading!: boolean;

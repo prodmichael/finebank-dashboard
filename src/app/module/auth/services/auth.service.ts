@@ -2,7 +2,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, Subject, catchError, tap, throwError } from 'rxjs';
 import { environment } from 'src/environments/environments';
-import { User } from './../interfaces/auth.interfaces';
+import { User, newUser } from './../interfaces/auth.interfaces';
 
 @Injectable()
 export class AuthService {
@@ -28,7 +28,15 @@ export class AuthService {
       .pipe(tap(this.setToken), catchError(this.handleError));
   }
 
-  signUp() {}
+  signupNewUser(user: newUser): Observable<any> {
+    user.returnSecureToken = true;
+    return this.http
+      .post(
+        `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${environment.apiKey}`,
+        user
+      )
+      .pipe(tap(this.setToken), catchError(this.handleError));
+  }
 
   logout() {
     this.setToken(null);
