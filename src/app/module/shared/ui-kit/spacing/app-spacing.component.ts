@@ -10,6 +10,7 @@ export class AppSpacingComponent {
     | 'l1'
     | 'l2'
     | 'l3'
+    | 'l3-5'
     | 'l4'
     | 'l5'
     | 'l6'

@@ -3,9 +3,49 @@
     <p class="text text-22-32 text_regular t-gray-02">Goals</p>
   </ng-container>
   <ng-container card-content>
-    <div class="flex flex_align-center">
-      <p class="text text-22-32 text_extrabold t-black">$20,000</p>
+    <div class="flex flex_align-center flex_justify-between border">
+      <div class="flex flex_align-center gap-9">
+        <p class="text text-22-32 text_extrabold t-black">$20,000</p>
+        <app-button size="normal" type="link-edit">
+          <mat-icon class="stroke" svgIcon="edit"></mat-icon>
+        </app-button>
+      </div>
+      <p class="text text-14-20 text_medium t-secondary">May, 2023</p>
     </div>
-    <app-spacing type="l2"></app-spacing>
+    <app-spacing type="l3-5"></app-spacing>
+    <div class="flex gap-16">
+      <div class="flex flex_column">
+        <div class="flex flex_align-start gap-4">
+          <mat-icon svgIcon="award"></mat-icon>
+          <div class="flex flex_column gap-4">
+            <p class="text text-12-16 text_regular t-gray-02">
+              Target Achieved
+            </p>
+            <p class="text text-16-24 text_bold t-black">$12,500</p>
+          </div>
+        </div>
+        <app-spacing type="l4"></app-spacing>
+        <div class="flex flex_align-start gap-4">
+          <mat-icon svgIcon="octicon"></mat-icon>
+          <div class="flex flex_column gap-4">
+            <p class="text text-12-16 text_regular t-gray-02">
+              This month Target
+            </p>
+            <p class="text text-16-24 text_bold t-black">$20,000</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex_column">
+        <app-spacing type="l1"></app-spacing>
+        <div class="flex flex_align-center flex_justify-between">
+          <p class="text text-16-24 text_semibold t-black">$0</p>
+          <p class="text text-16-24 text_semibold t-black">$12K</p>
+          <p class="text text-16-24 text_semibold t-black">$20K</p>
+        </div>
+        <app-spacing type="l3"></app-spacing>
+        <p class="text text-12-16 text_medium t-black">Target vs Achievement</p>
+      </div>
+    </div>
   </ng-container>
 </app-card>

@@ -12,6 +12,12 @@
   }
 }
 
+@mixin btn-normal {
+  height: 32px;
+  padding: 0 8px;
+  border-radius: 4px;
+}
+
 @mixin btn-small {
   height: 16px;
   span {
@@ -63,6 +69,14 @@
   &,
   span {
     @include weight-semibold();
+  }
+}
+
+@mixin btn-link-edit {
+  background-color: map-get($project-colors, "special-colors", bg);
+  .mat-icon {
+    @include icon-size(16px);
+    @include icon-color(#525256);
   }
 }
 
@@ -124,11 +138,17 @@
     &_link {
       @include btn-link;
     }
+    &_link-edit {
+      @include btn-link-edit;
+    }
   }
   // size
   &.btn {
     &_big {
       @include btn-big;
+    }
+    &_normal {
+      @include btn-normal;
     }
     &_small {
       @include btn-small;

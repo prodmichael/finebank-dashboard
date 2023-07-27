@@ -28,6 +28,11 @@ svg {
   height: 100%;
 }
 
+.border {
+  padding-bottom: 12px;
+  border-bottom: 1px solid map-get($project-colors, "colors", gray-06);
+}
+
 // TODO: ПОМЕНЯТЬ ЦВЕТ
 // ::-webkit-scrollbar {
 //   background-color: map-get($project-colors, "gradation", 800);

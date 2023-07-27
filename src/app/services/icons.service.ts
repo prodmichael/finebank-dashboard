@@ -28,7 +28,9 @@ export class IconsService {
     'arrow-up-right',
     'chevron-right',
     'chevron-left',
-    'chevron-right',
+    'edit',
+    'award',
+    'octicon',
   ];
 
   public initIcons(): void {
