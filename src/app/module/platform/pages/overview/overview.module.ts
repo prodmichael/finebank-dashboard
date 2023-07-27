@@ -10,6 +10,7 @@ import { OverviewHomeComponent } from './pages/overview-home/overview-home.compo
 import { CreditCardComponent } from './components/credit-card/credit-card.component';
 import { ButtonModule } from 'src/app/module/shared/ui-kit/button/button.module';
 import { MatIconModule } from '@angular/material/icon';
+import { OverviewGoalsComponent } from './components/overview-goals/overview-goals.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { MatIconModule } from '@angular/material/icon';
     OverviewHomeComponent,
     OverviewCardComponent,
     CreditCardComponent,
+    OverviewGoalsComponent,
   ],
   imports: [
     CommonModule,

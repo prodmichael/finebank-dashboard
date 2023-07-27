@@ -12,19 +12,19 @@ export class OverviewCardComponent implements OnInit {
     {
       img: '',
       type: 'Credit card',
-      number: '**** **** **** 2598',
+      number: '2345 3233 3233 2598',
       balance: '$25000',
     },
     {
       img: '',
       type: 'Debit card',
-      number: '**** **** **** 2293',
+      number: '6566 5433 3333 2293',
       balance: '$12000',
     },
     {
       img: '',
       type: 'Credit card',
-      number: '**** **** **** 8358',
+      number: '3213 2131 4321 8358',
       balance: '$53240',
     },
   ];
@@ -32,6 +32,13 @@ export class OverviewCardComponent implements OnInit {
   currentIndicatorIndex: number = 0;
   maxVisibleIndicators: number = 3;
   visibleIndicators: number[] = [];
+
+  hideFirstNumbers(cardNumber: string): string {
+    return cardNumber
+      .slice(cardNumber.length - 4, cardNumber.length)
+      .padStart(16, '*')
+      .replace(/(.{4})/g, '$1 ');
+  }
 
   ngOnInit() {
     this.updateVisibleIndicators();
