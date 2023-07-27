@@ -11,6 +11,7 @@ import { CreditCardComponent } from './components/credit-card/credit-card.compon
 import { ButtonModule } from 'src/app/module/shared/ui-kit/button/button.module';
 import { MatIconModule } from '@angular/material/icon';
 import { OverviewGoalsComponent } from './components/overview-goals/overview-goals.component';
+import { ProgressBarModule } from 'src/app/module/shared/ui-kit/progress-bar/progress-bar.module';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { OverviewGoalsComponent } from './components/overview-goals/overview-goa
     CardModule,
     ButtonModule,
     MatIconModule,
+    ProgressBarModule,
   ],
 })
 export class OverviewModule {}
