@@ -1,0 +1,14 @@
+@import "../../../../../shared/styles/vars.animations";
+@import "../../../../../shared/styles/vars.colors";
+
+.skeleton {
+  &.primary {
+    background: linear-gradient(
+      -45deg,
+      map-get($project-colors, "colors", primary)
+        darken(map-get($project-colors, "colors", secondary), 2),
+      map-get($project-colors, "special-colors", red)
+    );
+    background-size: 400% 400%;
+  }
+}

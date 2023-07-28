@@ -1,5 +1,13 @@
 @import "../../../../../shared/styles/vars.colors";
 
+:host {
+  width: 100%;
+}
+
 .progress-bar {
+  width: 100%;
+  border-radius: 8px;
   height: 64px;
+  position: relative;
+  overflow: hidden;
 }

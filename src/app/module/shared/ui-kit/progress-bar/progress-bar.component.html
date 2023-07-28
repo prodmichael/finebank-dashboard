@@ -1,9 +1,7 @@
-<div class="progress-bar">
-  <svg viewBox="0 0 107 64" class="progress">
-    <path d="M 0 25 A 25 25 0 0 1 50 0 H 0 Z" fill="#ccc" />
-    <!-- Здесь будет полукруглый progress bar -->
-  </svg>
-  <div class="arrow">
-    <!-- Здесь будет стрелочка -->
-  </div>
-</div>
+<ng-container *ngIf="loading; else content">
+  <app-skeleton
+    theme="primary"
+    [styles]="{ height: '40px', borderRadius: '8px' }"
+  ></app-skeleton>
+</ng-container>
+<ng-template #content></ng-template>
