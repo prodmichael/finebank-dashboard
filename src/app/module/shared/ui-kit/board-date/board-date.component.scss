@@ -1,0 +1,11 @@
+@import "../../../../../shared/styles/vars.colors";
+
+.board {
+  padding: 8px;
+  border-radius: 8px;
+  background-color: map-get($project-colors, "special-colors", bg);
+  &_date {
+    height: 32px;
+    padding: 0 4px;
+  }
+}

@@ -1,0 +1,51 @@
+<app-card>
+  <ng-container card-header-title>
+    <p class="text text-22-32 text_regular t-gray-02">Upcoming Bill</p>
+  </ng-container>
+  <ng-container card-content>
+    <app-spacing type="l3-5"></app-spacing>
+    <div class="flex flex_align-center gap-32">
+      <div class="flex flex_align-center gap-12">
+        <app-board-date [styles]="{ height: '66px' }">
+          <p class="text text-12-16 text_medium t-gray-01">May</p>
+          <ng-container board-date>
+            <p class="text text-22-32 text_extrabold t-black">15</p>
+          </ng-container>
+        </app-board-date>
+        <div class="flex flex_column">
+          <p class="text text-14-20 text_medium t-gray-01">Figma</p>
+          <p class="text text-16-24 text_bold t-secondary">Figma - Monthly</p>
+          <p class="text text text-12-16 text_regular t-gray-03">
+            Last Charge - 14 May, 2022
+          </p>
+        </div>
+      </div>
+      <div class="bill-costs flex flex_center">
+        <p class="text text-16-24 text_bold t-secondary">150$</p>
+      </div>
+    </div>
+    <app-spacing type="l1"></app-spacing>
+    <div class="border"></div>
+    <app-spacing type="l3-5"></app-spacing>
+    <div class="flex flex_align-center gap-32">
+      <div class="flex flex_align-center gap-12">
+        <app-board-date [styles]="{ height: '66px' }">
+          <p class="text text-12-16 text_medium t-gray-01">Jun</p>
+          <ng-container board-date>
+            <p class="text text-22-32 text_extrabold t-black">16</p>
+          </ng-container>
+        </app-board-date>
+        <div class="flex flex_column">
+          <p class="text text-14-20 text_medium t-gray-01">Abode</p>
+          <p class="text text-16-24 text_bold t-secondary">Adobe - Yearly</p>
+          <p class="text text text-12-16 text_regular t-gray-03">
+            Last Charge - 17 Jun, 2023
+          </p>
+        </div>
+      </div>
+      <div class="bill-costs flex flex_center" style="height: '40px'">
+        <p class="text text-16-24 text_bold t-secondary">$559</p>
+      </div>
+    </div>
+  </ng-container>
+</app-card>

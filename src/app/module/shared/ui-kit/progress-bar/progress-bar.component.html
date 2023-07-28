@@ -4,4 +4,22 @@
     [styles]="{ height: '40px', borderRadius: '8px' }"
   ></app-skeleton>
 </ng-container>
-<ng-template #content></ng-template>
+<ng-template #content>
+  <div
+    #progressBar
+    class="progress-bar flex flex_align-center flex_justify-between"
+    [class.empty]="value === 0"
+  >
+    <div
+      class="line line-current flex"
+      [style.flex-basics]="value === 0 ? '8px' : (value / final) * 100 + '%'"
+    >
+      <div class="current-duplicate flex flex_align-center">
+        <h4>${{ value }}</h4>
+        <h4>${{ value }}</h4>
+        <h4>${{ value }}</h4>
+        <h4 [style.transform]=""></h4>
+      </div>
+    </div>
+  </div>
+</ng-template>

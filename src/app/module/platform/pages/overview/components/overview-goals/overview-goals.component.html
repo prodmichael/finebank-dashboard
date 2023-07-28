@@ -37,14 +37,18 @@
         </div>
       </div>
       <div class="flex flex_column">
-        <app-progress-bar></app-progress-bar>
+        <app-progress-bar
+          [loading]="loading"
+          [current]="paymentCurrent"
+          [final]="paymentFinal"
+        ></app-progress-bar>
         <app-spacing type="l1"></app-spacing>
         <div class="flex flex_align-center flex_justify-between">
           <p class="text text-16-24 text_semibold t-black">$0</p>
           <p class="text text-16-24 text_semibold t-black">$12K</p>
           <p class="text text-16-24 text_semibold t-black">$20K</p>
         </div>
-        <app-spacing type="l3"></app-spacing>
+
         <p class="text text-12-16 text_medium t-black">Target vs Achievement</p>
       </div>
     </div>

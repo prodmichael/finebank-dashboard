@@ -12,6 +12,8 @@ import { OverviewGoalsComponent } from './components/overview-goals/overview-goa
 import { OverviewRoutingModule } from './overview-routing.module';
 import { OverviewComponent } from './overview.component';
 import { OverviewHomeComponent } from './pages/overview-home/overview-home.component';
+import { OverviewBillComponent } from './components/overview-bill/overview-bill.component';
+import { BoardDateModule } from 'src/app/module/shared/ui-kit/board-date/board-date.module';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,7 @@ import { OverviewHomeComponent } from './pages/overview-home/overview-home.compo
     OverviewCardComponent,
     CreditCardComponent,
     OverviewGoalsComponent,
+    OverviewBillComponent,
   ],
   imports: [
     CommonModule,
@@ -30,6 +33,7 @@ import { OverviewHomeComponent } from './pages/overview-home/overview-home.compo
     ButtonModule,
     MatIconModule,
     ProgressBarModule,
+    BoardDateModule,
   ],
 })
 export class OverviewModule {}
