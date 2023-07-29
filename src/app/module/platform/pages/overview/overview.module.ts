@@ -17,6 +17,8 @@ import { OverviewTransactionComponent } from './components/overview-transaction/
 import { OverviewRoutingModule } from './overview-routing.module';
 import { OverviewComponent } from './overview.component';
 import { OverviewHomeComponent } from './pages/overview-home/overview-home.component';
+import { OverviewStatisticsComponent } from './components/overview-statistics/overview-statistics.component';
+import { OverviewBreakdownComponent } from './components/overview-breakdown/overview-breakdown.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,8 @@ import { OverviewHomeComponent } from './pages/overview-home/overview-home.compo
     OverviewGoalsComponent,
     OverviewBillComponent,
     OverviewTransactionComponent,
+    OverviewStatisticsComponent,
+    OverviewBreakdownComponent,
   ],
   imports: [
     CommonModule,
