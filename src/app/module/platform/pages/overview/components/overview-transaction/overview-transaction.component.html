@@ -1,0 +1,32 @@
+<app-card>
+  <ng-container card-header-title>
+    <p class="text text-22-32 text_regular t-gray-02">Recent Transaction</p>
+  </ng-container>
+  <ng-container card-header-btn>
+    <app-button size="normal" type="link">
+      <span class="text text text-12-16 text_medium t-gray-02">View All</span>
+      <mat-icon class="stroke" svgIcon="chevron-right"></mat-icon>
+    </app-button>
+  </ng-container>
+  <ng-container card-content>
+    <app-spacing type="l3-5"></app-spacing>
+    <mat-tab-group
+      class="custom-tab-group"
+      mat-stretch-tabs="false"
+      mat-align-tabs="start"
+    >
+      <mat-tab label="All">
+        <app-spacing type="l2"></app-spacing>
+        <app-item></app-item>
+      </mat-tab>
+      <mat-tab label="Revenue">
+        <app-spacing type="l2"></app-spacing>
+        Content1
+      </mat-tab>
+      <mat-tab label="Expenses">
+        <app-spacing type="l2"></app-spacing>
+        Content1
+      </mat-tab>
+    </mat-tab-group>
+  </ng-container>
+</app-card>

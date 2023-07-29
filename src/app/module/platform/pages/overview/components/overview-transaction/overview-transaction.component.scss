@@ -1,0 +1,7 @@
+@import "../../../../../../../shared/styles/widjets/icon_tools";
+app-button {
+  .mat-icon {
+    @include icon-color(#878787);
+    @include icon-size(16px);
+  }
+}

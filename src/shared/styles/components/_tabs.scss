@@ -1,0 +1,30 @@
+.mdc-tab {
+  margin-right: 36px !important;
+}
+
+.mdc-tab,
+.mdc-tab__content {
+  min-width: 0 !important;
+  padding: 0 !important;
+  height: 40px !important;
+}
+
+.mdc-tab__text-label {
+  font-family: "inter";
+  font-size: 16px;
+  line-height: 24px !important;
+  font-weight: 700;
+  color: map-get($project-colors, "colors", secondary) !important;
+}
+
+.mat-mdc-tab-header {
+  --mdc-tab-indicator-active-indicator-height: 0 !important;
+}
+
+.mdc-tab--active {
+  .mdc-tab__text-label {
+    color: map-get($project-colors, "colors", primary) !important;
+  }
+
+  border-bottom: 2px solid map-get($project-colors, "colors", primary) !important;
+}
