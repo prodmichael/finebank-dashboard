@@ -31,6 +31,8 @@ export class IconsService {
     'edit',
     'award',
     'octicon',
+    'gamepad',
+    'shopping',
   ];
 
   public initIcons(): void {

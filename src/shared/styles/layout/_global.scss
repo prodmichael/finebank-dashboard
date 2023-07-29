@@ -9,7 +9,7 @@
 }
 
 .content {
-  flex: 1;
+  overflow: hidden;
 }
 
 .container {
@@ -25,7 +25,8 @@
 }
 
 .list {
-  overflow-y: scroll;
+  padding-bottom: 34px;
+  overflow-y: auto;
 }
 
 @mixin item-border-bottom {

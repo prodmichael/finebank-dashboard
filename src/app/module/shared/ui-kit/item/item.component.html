@@ -1,3 +1,7 @@
-<div class="flex flex_align-center">
+<div class="flex flex_align-center flex_justify-between">
+  <div class="flex flex_align-center gap-16">
+    <ng-content select="[item-img]"></ng-content>
+    <ng-content select="[item-title]"></ng-content>
+  </div>
   <ng-content></ng-content>
 </div>
