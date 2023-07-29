@@ -10,8 +10,10 @@
 
 .container {
   width: 100%;
+  max-width: 1160px;
+  margin: 0 auto;
   padding-left: 24px;
-  padding-right: 24px;
+  padding-right: 32px;
 }
 
 .block {
