@@ -19,6 +19,8 @@ import { OverviewComponent } from './overview.component';
 import { OverviewHomeComponent } from './pages/overview-home/overview-home.component';
 import { OverviewStatisticsComponent } from './components/overview-statistics/overview-statistics.component';
 import { OverviewBreakdownComponent } from './components/overview-breakdown/overview-breakdown.component';
+import { OverviewModalWindowComponent } from './modules/overview-modal-window/overview-modal-window.component';
+import { ModalWindowModule } from 'src/app/module/shared/ui-kit/modal-window/modal-window.module';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,7 @@ import { OverviewBreakdownComponent } from './components/overview-breakdown/over
     OverviewTransactionComponent,
     OverviewStatisticsComponent,
     OverviewBreakdownComponent,
+    OverviewModalWindowComponent,
   ],
   imports: [
     CommonModule,
@@ -44,6 +47,7 @@ import { OverviewBreakdownComponent } from './components/overview-breakdown/over
     CreditCardModule,
     MatTabsModule,
     ItemModule,
+    ModalWindowModule,
   ],
 })
 export class OverviewModule {}

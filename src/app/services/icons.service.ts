@@ -33,6 +33,7 @@ export class IconsService {
     'octicon',
     'gamepad',
     'shopping',
+    'x',
   ];
 
   public initIcons(): void {

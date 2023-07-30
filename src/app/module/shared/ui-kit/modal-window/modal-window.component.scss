@@ -1,0 +1,23 @@
+@import "../../../../../shared/styles/widjets/icon_tools";
+
+.modal {
+  width: 488px;
+  padding: 64px;
+  position: relative;
+
+  border-radius: 16px;
+  background: var(--white, #fff);
+
+  &_header {
+    padding: 0;
+  }
+}
+
+app-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  .mat-icon {
+    @include icon-size(32px);
+  }
+}

@@ -1,0 +1,8 @@
+<div class="modal flex flex_column">
+  <div class="flex flex_align-center flex_align-self-end">
+    <app-button (click)="closeModal()" type="link">
+      <mat-icon svgIcon="x"></mat-icon>
+    </app-button>
+  </div>
+  <ng-content select="[modal-content]"></ng-content>
+</div>
