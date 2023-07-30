@@ -9,7 +9,12 @@ export class ModalWindowComponent {
   @Input() isOpen: boolean = false;
   @Output() closeModalEvent = new EventEmitter<void>();
 
+  openModal() {
+    this.isOpen = true;
+  }
+
   closeModal() {
+    this.isOpen = false;
     this.closeModalEvent.emit();
   }
 }

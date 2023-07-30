@@ -1,22 +1,31 @@
 @import "../../../../../shared/styles/widjets/icon_tools";
 
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 99;
+}
 .modal {
   width: 488px;
   padding: 64px;
-  position: relative;
+
+  position: fixed;
+  top: 30%;
+  left: 41%;
+  z-index: 100;
 
   border-radius: 16px;
   background: var(--white, #fff);
-
-  &_header {
-    padding: 0;
-  }
 }
 
 app-button {
   position: absolute;
   top: 0;
-  right: 0;
+  right: -25px;
   .mat-icon {
     @include icon-size(32px);
   }
