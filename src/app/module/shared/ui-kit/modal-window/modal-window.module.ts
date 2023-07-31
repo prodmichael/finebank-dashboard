@@ -1,9 +1,9 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ModalWindowComponent } from './modal-window.component';
-import { ButtonModule } from '../button/button.module';
+import { NgModule } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
+import { ButtonModule } from '../button/button.module';
 import { AppSpacingModule } from '../spacing/app-spacing.module';
+import { ModalWindowComponent } from './modal-window.component';
 
 @NgModule({
   declarations: [ModalWindowComponent],

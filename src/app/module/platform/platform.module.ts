@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { MatDialogModule } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
 import { ButtonModule } from '../shared/ui-kit/button/button.module';
 import { NavMenuModule } from '../shared/ui-kit/nav-menu/nav-menu.module';
@@ -20,6 +21,7 @@ import { PlatformComponent } from './platform.component';
     NavMenuModule,
     ButtonModule,
     ProfilePictureModule,
+    MatDialogModule,
   ],
 })
 export class PlatformModule {}

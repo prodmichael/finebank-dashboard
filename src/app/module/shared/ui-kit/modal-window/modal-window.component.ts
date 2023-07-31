@@ -1,4 +1,5 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-modal-window',
@@ -6,15 +7,9 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrls: ['./modal-window.component.scss'],
 })
 export class ModalWindowComponent {
-  @Input() isOpen: boolean = false;
-  @Output() closeModalEvent = new EventEmitter<void>();
-
-  openModal() {
-    this.isOpen = true;
-  }
+  constructor(private dialog: MatDialog) {}
 
   closeModal() {
-    this.isOpen = false;
-    this.closeModalEvent.emit();
+    this.dialog.closeAll();
   }
 }

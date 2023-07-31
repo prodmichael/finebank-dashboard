@@ -21,6 +21,7 @@ import { OverviewModalWindowComponent } from './modules/overview-modal-window/ov
 import { OverviewRoutingModule } from './overview-routing.module';
 import { OverviewComponent } from './overview.component';
 import { OverviewHomeComponent } from './pages/overview-home/overview-home.component';
+import { OverviewService } from './services/overview.service';
 
 @NgModule({
   declarations: [
@@ -49,5 +50,6 @@ import { OverviewHomeComponent } from './pages/overview-home/overview-home.compo
     ItemModule,
     ModalWindowModule,
   ],
+  providers: [OverviewService],
 })
 export class OverviewModule {}
