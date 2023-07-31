@@ -37,7 +37,7 @@ export class IconsService {
     'food',
     'housing',
     'up-arrow',
-    'up-arrow',
+    'arrow-right',
   ];
 
   public initIcons(): void {
