@@ -2,5 +2,22 @@
   <ng-container card-header-title>
     <p class="text text-22-32 text_regular t-gray-02">Expenses Breakdown</p>
   </ng-container>
-  <ng-container card-content></ng-container>
+  <ng-container card-content>
+    <app-spacing type="l3-5"></app-spacing>
+    <app-item>
+      <ng-container item-img>
+        <mat-icon svgIcon="housing"></mat-icon>
+      </ng-container>
+      <ng-container item-title>
+        <div class="flex flex_column">
+          <p class="text text_medium text-12-16 t-gray-02">Housing</p>
+          <p class="text text-16-24 text_bold t-black">$250.00</p>
+          <div class="flex gap-8 flex_align-center">
+            <p class="text text_medium text-12-16 t-gray-03">15%*</p>
+            <mat-icon class="stroke small" svgIcon="up-arrow"></mat-icon>
+          </div>
+        </div>
+      </ng-container>
+    </app-item>
+  </ng-container>
 </app-card>

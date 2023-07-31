@@ -10,6 +10,6 @@ export class OverviewHomeComponent implements OnInit {
   constructor(private overviewService: OverviewService) {}
   // Открытие модального окна при загрузке компонент
   ngOnInit() {
-    this.overviewService.openModalWindow();
+    // this.overviewService.openModalWindow();
   }
 }

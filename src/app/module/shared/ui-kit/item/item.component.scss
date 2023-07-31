@@ -5,3 +5,9 @@
   border-radius: 8px;
   background: map-get($project-colors, "special-colors", bg);
 }
+
+.img_background {
+  padding: 8px;
+  background-color: map-get($project-colors, "special-colors", bg);
+  border-radius: 8px;
+}

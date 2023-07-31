@@ -1,0 +1,4 @@
+@import "../../../../../../../shared/styles/widjets/icon_tools";
+.mat-icon {
+  @include icon-color(rgba(231, 61, 28, 1));
+}

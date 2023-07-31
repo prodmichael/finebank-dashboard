@@ -35,4 +35,7 @@
   &.big {
     @include icon-size(24px);
   }
+  &.custom-32 {
+    @include icon-size(32px);
+  }
 }

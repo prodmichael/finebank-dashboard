@@ -34,6 +34,10 @@ export class IconsService {
     'gamepad',
     'shopping',
     'x',
+    'food',
+    'housing',
+    'up-arrow',
+    'up-arrow',
   ];
 
   public initIcons(): void {
