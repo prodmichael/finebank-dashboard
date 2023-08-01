@@ -25,7 +25,7 @@ export class AuthService {
         `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${environment.apiKey}`,
         user
       )
-      .pipe(tap(this.setToken), catchError(this.handleError));
+      .pipe(tap(this.setToken), catchError(this.handleError.bind(this)));
   }
 
   signupNewUser(user: newUser): Observable<any> {
@@ -36,10 +36,6 @@ export class AuthService {
         user
       )
       .pipe(tap(this.setToken), catchError(this.handleError));
-  }
-
-  logout() {
-    this.setToken(null);
   }
 
   private handleError(error: HttpErrorResponse): Observable<any> {
@@ -56,6 +52,10 @@ export class AuthService {
         break;
     }
     return throwError(error);
+  }
+
+  logout() {
+    this.setToken(null);
   }
 
   isAuthenticated(): boolean {

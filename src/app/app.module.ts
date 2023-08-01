@@ -11,6 +11,7 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { environment } from 'src/environments/environments';
 import { AuthComponent } from './module/auth/auth.component';
 import { AuthModule } from './module/auth/auth.module';
+import { AuthGuard } from './module/shared/services/guards/auth.guard';
 import { IconsService } from './services/icons.service';
 @NgModule({
   declarations: [AppComponent, AuthComponent],

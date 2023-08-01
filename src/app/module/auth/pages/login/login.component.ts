@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { User } from '../../interfaces/auth.interfaces';
 import { AuthService } from '../../services/auth.service';
 
@@ -10,16 +10,27 @@ import { AuthService } from '../../services/auth.service';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
-  constructor(public authService: AuthService, private router: Router) {}
+  constructor(
+    public authService: AuthService,
+    private router: Router,
+    private route: ActivatedRoute
+  ) {}
   form!: FormGroup;
   passwordVisible: boolean = false;
   submitted = false;
+  message!: string;
 
   togglePasswordVisibility() {
     this.passwordVisible = !this.passwordVisible;
   }
 
   ngOnInit() {
+    this.route.queryParams.subscribe((params: Params) => {
+      if (params['loginAgain']) {
+        this.message = 'Access Denied';
+      }
+    });
+
     this.form = new FormGroup({
       email: new FormControl(null, [Validators.required, Validators.email]),
       password: new FormControl(null, [
@@ -40,10 +51,15 @@ export class LoginComponent implements OnInit {
       password: this.form.value.password,
     };
 
-    this.authService.login(user).subscribe(() => {
-      this.form.reset();
-      this.router.navigate(['platform', 'overview']);
-      this.submitted = false;
-    });
+    this.authService.login(user).subscribe(
+      () => {
+        this.form.reset();
+        this.router.navigate(['platform', 'overview']);
+        this.submitted = false;
+      },
+      () => {
+        this.submitted = false;
+      }
+    );
   }
 }
