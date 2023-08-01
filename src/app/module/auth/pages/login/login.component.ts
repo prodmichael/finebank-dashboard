@@ -28,6 +28,8 @@ export class LoginComponent implements OnInit {
     this.route.queryParams.subscribe((params: Params) => {
       if (params['loginAgain']) {
         this.message = 'Access Denied';
+      } else if (params['authFailed']) {
+        this.message = 'The session has expired, enter the data again';
       }
     });
 
