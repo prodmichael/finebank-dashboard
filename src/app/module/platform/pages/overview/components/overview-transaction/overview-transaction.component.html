@@ -15,7 +15,7 @@
       mat-stretch-tabs="false"
       mat-align-tabs="start"
     >
-      <mat-tab *ngIf="let transaction of transactions$ | async" label="All">
+      <mat-tab label="All">
         <app-spacing type="l2"></app-spacing>
         <app-spacing type="l4"></app-spacing>
         <app-item>
@@ -24,9 +24,7 @@
           </ng-container>
           <ng-container item-title>
             <div class="flex flex_column">
-              <p class="text text-16-24 text_semibold t-black">
-                <!-- {{ transaction.name }} -->
-              </p>
+              <p class="text text-16-24 text_semibold t-black">GTR 5</p>
               <p class="text text-12-16 text_regular t-gray-03">
                 Hajir Biriyani
               </p>

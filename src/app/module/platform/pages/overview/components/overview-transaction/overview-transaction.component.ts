@@ -22,7 +22,8 @@ export class OverviewTransactionComponent implements OnInit {
       .getTransaction()
       .pipe(
         tap((response) => {
-          this.transactions$.next(response);
+          this.transactions$.next(Object.values(response));
+          console.log(response);
         })
       )
       .subscribe();

@@ -15,7 +15,7 @@ export class OverviewService {
 
   getTransaction(): Observable<Transaction[]> {
     return this.http.get<Transaction[]>(
-      `https://finebank-f51fe-default-rtdb.firebaseio.com/transaction.json`
+      `https://finebank-f51fe-default-rtdb.firebaseio.com/transactions/transaction.json`
     );
   }
 }
