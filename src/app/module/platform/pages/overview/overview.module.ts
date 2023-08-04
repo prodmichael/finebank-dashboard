@@ -47,8 +47,8 @@ import { OverviewService } from './services/overview.service';
     BoardDateModule,
     CreditCardModule,
     MatTabsModule,
-    ItemModule,
     ModalWindowModule,
+    ItemModule,
   ],
   providers: [OverviewService],
 })
