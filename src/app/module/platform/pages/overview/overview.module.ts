@@ -22,6 +22,7 @@ import { OverviewRoutingModule } from './overview-routing.module';
 import { OverviewComponent } from './overview.component';
 import { OverviewHomeComponent } from './pages/overview-home/overview-home.component';
 import { OverviewService } from './services/overview.service';
+import { TabModule } from 'src/app/module/shared/ui-kit/tab/tab.module';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import { OverviewService } from './services/overview.service';
     MatTabsModule,
     ModalWindowModule,
     ItemModule,
+    TabModule,
   ],
   providers: [OverviewService],
 })

@@ -1,0 +1,6 @@
+<ng-container *ngFor="let tab">
+  <ng-container
+    *ngIf="tab.selected"
+    [ngTemplateOutlet]="tab.tabTemplate"
+  ></ng-container>
+</ng-container>

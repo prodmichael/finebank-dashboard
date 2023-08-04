@@ -1,0 +1,9 @@
+<button
+  [disabled]="disabled"
+  [class.tab_loading]="loading"
+  (click)="press.emit($event)"
+  class="tab flex flex_center"
+  [ngClass]="'tab_' + type + ' tab_' + size + ' tab_' + status"
+>
+  <ng-content></ng-content>
+</button>
