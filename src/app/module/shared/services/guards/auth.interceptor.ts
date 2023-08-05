@@ -20,8 +20,8 @@ export class AuthInterceptor implements HttpInterceptor {
   ): Observable<HttpEvent<any>> {
     if (this.authService.isAuthenticated()) {
       // req = req.clone({
-      //   setParams: {
-      //     auth: this.authService.token,
+      //   setHeaders: {
+      //     Authorization: this.authService.getToken(),
       //   },
       // });
     }

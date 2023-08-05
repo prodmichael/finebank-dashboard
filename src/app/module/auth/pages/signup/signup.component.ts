@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { newUser } from '../../interfaces/auth.interfaces';
 import { AuthService } from '../../services/auth.service';
 
@@ -9,9 +10,10 @@ import { AuthService } from '../../services/auth.service';
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.scss'],
 })
-export class SignupComponent implements OnInit {
+export class SignupComponent implements OnInit, OnDestroy {
   form!: FormGroup;
   submitted = false;
+  aSub!: Subscription;
 
   constructor(private authService: AuthService, private router: Router) {}
 
@@ -24,6 +26,12 @@ export class SignupComponent implements OnInit {
         Validators.minLength(8),
       ]),
     });
+  }
+
+  ngOnDestroy() {
+    if (this.aSub) {
+      this.aSub.unsubscribe();
+    }
   }
 
   submit() {
@@ -39,7 +47,7 @@ export class SignupComponent implements OnInit {
       password: this.form.value.password,
     };
 
-    this.authService.register(user).subscribe(() => {
+    this.aSub = this.authService.register(user).subscribe(() => {
       this.form.reset();
       this.router.navigate(['platform', 'overview']);
       this.submitted = false;

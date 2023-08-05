@@ -1,6 +1,6 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, Subject, catchError, tap, throwError } from 'rxjs';
+import { Observable, Subject, tap, throwError } from 'rxjs';
 import { User, newUser } from './../interfaces/auth.interfaces';
 
 @Injectable()
@@ -9,17 +9,19 @@ export class AuthService {
   constructor(private http: HttpClient) {}
   private token = null;
 
-  login(user: User): Observable<any> {
+  login(user: User): Observable<{ token: string }> {
     user.returnSecureToken = true;
-    return this.http
-      .post<any>(`/api/auth/login`, user)
-      .pipe(tap(this.setToken), catchError(this.handleError.bind(this)));
+    return this.http.post<{ token: string }>(`/api/auth/login`, user).pipe(
+      tap(({ token }) => {
+        localStorage.setItem('auth-token', token);
+        this.setToken(token);
+      })
+    );
   }
 
-  register(user: newUser): Observable<any> {
+  register(user: newUser): Observable<newUser> {
     user.returnSecureToken = true;
-    return this.http.post(`/api/auth/register`, user);
-    // .pipe(tap(this.setToken), catchError(this.handleError));
+    return this.http.post<newUser>(`/api/auth/register`, user);
   }
 
   private handleError(error: HttpErrorResponse): Observable<any> {
@@ -43,7 +45,7 @@ export class AuthService {
   }
 
   setToken(token: any) {
-    localStorage.setItem('auth-token', token);
+    this.token = token;
   }
 
   isAuthenticated(): boolean {
