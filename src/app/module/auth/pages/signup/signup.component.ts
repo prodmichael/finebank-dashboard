@@ -39,7 +39,7 @@ export class SignupComponent implements OnInit {
       password: this.form.value.password,
     };
 
-    this.authService.signupNewUser(user).subscribe(() => {
+    this.authService.register(user).subscribe(() => {
       this.form.reset();
       this.router.navigate(['platform', 'overview']);
       this.submitted = false;

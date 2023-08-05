@@ -11,12 +11,6 @@ export interface newUser {
   returnSecureToken?: boolean;
 }
 
-export interface SignIn {
-  name: string;
-  email: string;
-  password: string;
-}
-
 export interface FbAuthResponse {
   idToken: string;
   expiresIn: string;

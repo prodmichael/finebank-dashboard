@@ -19,11 +19,11 @@ export class AuthInterceptor implements HttpInterceptor {
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
     if (this.authService.isAuthenticated()) {
-      req = req.clone({
-        setParams: {
-          auth: this.authService.token,
-        },
-      });
+      // req = req.clone({
+      //   setParams: {
+      //     auth: this.authService.token,
+      //   },
+      // });
     }
 
     return next.handle(req).pipe(

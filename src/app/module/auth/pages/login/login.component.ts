@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Params, Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { User } from '../../interfaces/auth.interfaces';
 import { AuthService } from '../../services/auth.service';
 
@@ -9,7 +10,7 @@ import { AuthService } from '../../services/auth.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent implements OnInit, OnDestroy {
   constructor(
     public authService: AuthService,
     private router: Router,
@@ -19,6 +20,7 @@ export class LoginComponent implements OnInit {
   passwordVisible: boolean = false;
   submitted = false;
   message!: string;
+  aSub!: Subscription;
 
   togglePasswordVisibility() {
     this.passwordVisible = !this.passwordVisible;
@@ -41,6 +43,13 @@ export class LoginComponent implements OnInit {
       ]),
     });
   }
+
+  ngOnDestroy() {
+    if (this.aSub) {
+      this.aSub.unsubscribe();
+    }
+  }
+
   submit() {
     this.submitted = true;
     if (this.form.valid) {
@@ -53,7 +62,7 @@ export class LoginComponent implements OnInit {
       password: this.form.value.password,
     };
 
-    this.authService.login(user).subscribe(
+    this.aSub = this.authService.login(user).subscribe(
       () => {
         this.form.reset();
         this.router.navigate(['platform', 'overview']);
