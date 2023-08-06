@@ -1,6 +1,4 @@
+<ng-content select="[tab-header]"></ng-content>
 <ng-container *ngFor="let tab">
-  <ng-container
-    *ngIf="tab.selected"
-    [ngTemplateOutlet]="tab.tabTemplate"
-  ></ng-container>
+  <ng-container *ngIf="tab"></ng-container>
 </ng-container>

@@ -11,9 +11,10 @@ import { UserPanelComponent } from './components/sidebar/components/user-panel/u
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { PlatformRoutingModule } from './platform-routing.module';
 import { PlatformComponent } from './platform.component';
+import { BalancesComponent } from './pages/balances/balances.component';
 
 @NgModule({
-  declarations: [SidebarComponent, UserPanelComponent, PlatformComponent],
+  declarations: [SidebarComponent, UserPanelComponent, PlatformComponent, BalancesComponent],
   imports: [
     CommonModule,
     PlatformRoutingModule,

@@ -42,7 +42,7 @@
     </app-nav-menu>
   </div>
   <div class="flex flex_column">
-    <app-nav-menu type="link" routerLink="/auth/login">
+    <app-nav-menu (click)="logout()" type="link">
       <mat-icon class="stroke" btn-icon-left svgIcon="logout"></mat-icon>
       <span class="text text-16-24 t-special-bg">Logout</span>
     </app-nav-menu>

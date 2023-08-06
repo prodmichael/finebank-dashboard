@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { BehaviorSubject, tap } from 'rxjs';
 import { Transaction } from '../../interfaces/overview.interface';
 import { OverviewService } from './../../services/overview.service';
@@ -28,4 +28,6 @@ export class OverviewTransactionComponent implements OnInit {
       )
       .subscribe();
   }
+
+  selected() {}
 }
