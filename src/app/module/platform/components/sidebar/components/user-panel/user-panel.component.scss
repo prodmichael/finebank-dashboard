@@ -4,3 +4,13 @@
   padding: 32px 0;
   border-top: 1px solid map-get($project-colors, "special-colors", dark-white);
 }
+
+.modal-menu {
+  position: absolute;
+  right: 0px;
+  bottom: 13%;
+
+  padding: 10px;
+  border-radius: 16px;
+  background: var(--default-black, #000000);
+}

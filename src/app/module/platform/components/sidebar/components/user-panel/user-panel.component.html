@@ -4,5 +4,22 @@
     <p class="text text-16-24 text_semibold t-white">Tanzir Rahman</p>
     <p class="text text-12-16 text_regular t-special-white">View profile</p>
   </div>
-  <mat-icon svgIcon="menu"></mat-icon>
+  <app-button #menu (click)="openMenu()" size="small" type="link">
+    <mat-icon svgIcon="menu"></mat-icon>
+  </app-button>
+  <div
+    *ngIf="isMenuOpen"
+    (clickOutside)="closeMenu()"
+    class="modal-menu flex flex_center flex_column"
+  >
+    <app-button size="small" type="link">
+      <span class="text text-14-20 text_medium t-gray-01">Edit profile</span>
+    </app-button>
+    <app-spacing type="l3"></app-spacing>
+    <app-button size="small" type="link">
+      <span class="text text-14-20 text_medium t-gray-01"
+        ><span class="text text-14-20 text_medium t-gray-01">Delete</span></span
+      >
+    </app-button>
+  </div>
 </div>

@@ -9,6 +9,7 @@ import { AuthService } from 'src/app/module/auth/services/auth.service';
 })
 export class SidebarComponent {
   constructor(private authService: AuthService, private router: Router) {}
+
   logout() {
     this.authService.logout();
     this.router.navigate(['/login']);
