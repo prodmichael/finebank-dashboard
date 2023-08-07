@@ -17,6 +17,7 @@
     >
       <mat-tab label="All">
         <app-item
+          padding="24px 0"
           [border]="idx + 1 !== transactions.length"
           *ngFor="let transaction of transactions; let idx = index"
         >

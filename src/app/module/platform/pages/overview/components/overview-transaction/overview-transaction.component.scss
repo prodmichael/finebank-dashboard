@@ -1,5 +1,6 @@
 @import "../../../../../../../shared/styles/widjets/icon_tools";
 @import "../../../../../../../shared/styles/vars.colors";
+
 app-button {
   .mat-icon {
     @include icon-color(#878787);

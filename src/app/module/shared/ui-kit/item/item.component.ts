@@ -7,4 +7,5 @@ import { Component, Input } from '@angular/core';
 })
 export class ItemComponent {
   @Input() border: boolean = true;
+  @Input() padding!: string;
 }
