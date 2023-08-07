@@ -5,4 +5,6 @@ import { Component, Input } from '@angular/core';
   templateUrl: './item.component.html',
   styleUrls: ['./item.component.scss'],
 })
-export class ItemComponent {}
+export class ItemComponent {
+  @Input() border: boolean = true;
+}

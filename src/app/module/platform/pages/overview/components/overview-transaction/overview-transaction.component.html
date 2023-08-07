@@ -16,104 +16,35 @@
       mat-align-tabs="start"
     >
       <mat-tab label="All">
-        <app-spacing type="l2"></app-spacing>
-        <app-spacing type="l4"></app-spacing>
-        <app-item>
+        <app-item
+          [border]="idx + 1 !== transactions.length"
+          *ngFor="let transaction of transactions; let idx = index"
+        >
           <ng-container item-img>
             <mat-icon class="small stroke" svgIcon="gamepad"></mat-icon>
           </ng-container>
           <ng-container item-title>
             <div class="flex flex_column">
-              <p class="text text-16-24 text_semibold t-black">GTR 5</p>
+              <p class="text text-16-24 text_semibold t-black">
+                {{ transaction.name }}
+              </p>
               <p class="text text-12-16 text_regular t-gray-03">
-                Hajir Biriyani
+                {{ transaction.desc }}
               </p>
             </div>
           </ng-container>
           <div class="flex flex_column">
-            <p class="text text-16-24 text_semibold t-secondary">$10.00</p>
-            <p class="text text-12-16 text_regular t-gray-03">17 May 2023</p>
-          </div>
-        </app-item>
-        <app-spacing type="l4"></app-spacing>
-        <app-spacing type="l4"></app-spacing>
-      </mat-tab>
-      <mat-tab label="Revenue">
-        <app-spacing type="l2"></app-spacing>
-        <app-spacing type="l4"></app-spacing>
-        <app-item>
-          <ng-container item-img>
-            <mat-icon class="small stroke" svgIcon="gamepad"></mat-icon>
-          </ng-container>
-          <ng-container item-title>
-            <div class="flex flex_column">
-              <p class="text text-16-24 text_semibold t-black">Biriyani</p>
-              <p class="text text-12-16 text_regular t-gray-03">
-                Hajir Biriyani
-              </p>
-            </div>
-          </ng-container>
-          <div class="flex flex_column">
-            <p class="text text-16-24 text_semibold t-secondary">$10.00</p>
-            <p class="text text-12-16 text_regular t-gray-03">17 May 2023</p>
-          </div>
-        </app-item>
-        <app-spacing type="l4"></app-spacing>
-        <app-spacing type="l4"></app-spacing>
-        <app-item>
-          <ng-container item-img>
-            <mat-icon class="small stroke" svgIcon="shopping"></mat-icon>
-          </ng-container>
-          <ng-container item-title>
-            <div class="flex flex_column">
-              <p class="text text-16-24 text_semibold t-black">Polo Shirt</p>
-              <p class="text text-12-16 text_regular t-gray-03">XL fashions</p>
-            </div>
-          </ng-container>
-          <div class="flex flex_column">
-            <p class="text text-16-24 text_semibold t-secondary">$20.00</p>
-            <p class="text text-12-16 text_regular t-gray-03">17 May 2023</p>
+            <p class="text text-16-24 text_semibold t-secondary">
+              {{ transaction.price }}
+            </p>
+            <p class="text text-12-16 text_regular t-gray-03">
+              {{ transaction.date }}
+            </p>
           </div>
         </app-item>
       </mat-tab>
-      <mat-tab label="Expenses">
-        <app-spacing type="l2"></app-spacing>
-        <app-spacing type="l4"></app-spacing>
-        <app-item>
-          <ng-container item-img>
-            <mat-icon class="small stroke" svgIcon="gamepad"></mat-icon>
-          </ng-container>
-          <ng-container item-title>
-            <div class="flex flex_column">
-              <p class="text text-16-24 text_semibold t-black">Biriyani</p>
-              <p class="text text-12-16 text_regular t-gray-03">
-                Hajir Biriyani
-              </p>
-            </div>
-          </ng-container>
-          <div class="flex flex_column">
-            <p class="text text-16-24 text_semibold t-secondary">$10.00</p>
-            <p class="text text-12-16 text_regular t-gray-03">17 May 2023</p>
-          </div>
-        </app-item>
-        <app-spacing type="l4"></app-spacing>
-        <app-spacing type="l4"></app-spacing>
-        <app-item>
-          <ng-container item-img>
-            <mat-icon class="small stroke" svgIcon="shopping"></mat-icon>
-          </ng-container>
-          <ng-container item-title>
-            <div class="flex flex_column">
-              <p class="text text-16-24 text_semibold t-black">Polo Shirt</p>
-              <p class="text text-12-16 text_regular t-gray-03">XL fashions</p>
-            </div>
-          </ng-container>
-          <div class="flex flex_column">
-            <p class="text text-16-24 text_semibold t-secondary">$20.00</p>
-            <p class="text text-12-16 text_regular t-gray-03">17 May 2023</p>
-          </div>
-        </app-item>
-      </mat-tab>
+      <mat-tab label="Revenue"> </mat-tab>
+      <mat-tab label="Expenses"> </mat-tab>
     </mat-tab-group>
   </ng-container>
 </app-card>

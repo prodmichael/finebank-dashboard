@@ -10,6 +10,32 @@ import { OverviewService } from './../../services/overview.service';
 })
 export class OverviewTransactionComponent implements OnInit {
   public transactions$ = new BehaviorSubject<Transaction[]>([]);
+  @Input() transactions = [
+    {
+      name: 'GTR5',
+      desc: 'Gadget & Gear',
+      price: '$160.00',
+      date: '17 May 2023',
+    },
+    {
+      name: 'GTR5',
+      desc: 'Gadget & Gear',
+      price: '$160.00',
+      date: '17 May 2023',
+    },
+    {
+      name: 'GTR5',
+      desc: 'Gadget & Gear',
+      price: '$160.00',
+      date: '17 May 2023',
+    },
+    {
+      name: 'GTR5',
+      desc: 'Gadget & Gear',
+      price: '$160.00',
+      date: '17 May 2023',
+    },
+  ];
 
   constructor(private overviewService: OverviewService) {}
 
