@@ -22,6 +22,14 @@ const routes: Routes = [
             (m) => m.OverviewModule
           ),
       },
+      {
+        path: 'balances',
+        data: { routes: 'balances' },
+        loadChildren: () =>
+          import('./pages/balances/balances.module').then(
+            (m) => m.BalancesModule
+          ),
+      },
     ],
   },
 ];

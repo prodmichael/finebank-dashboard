@@ -3,3 +3,7 @@
 .mat-icon {
   @include icon-color(rgba(231, 61, 28, 1));
 }
+
+.border {
+  padding: 0;
+}

@@ -10,18 +10,11 @@ import { ProfilePictureModule } from '../shared/ui-kit/profile-picture/profile-p
 import { AppSpacingModule } from '../shared/ui-kit/spacing/app-spacing.module';
 import { UserPanelComponent } from './components/sidebar/components/user-panel/user-panel.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
-import { BalancesComponent } from './pages/balances/balances.component';
 import { PlatformRoutingModule } from './platform-routing.module';
 import { PlatformComponent } from './platform.component';
-import { ClickoutsideDirective } from '../shared/ui-kit/directives/clickoutside.directive';
 
 @NgModule({
-  declarations: [
-    SidebarComponent,
-    UserPanelComponent,
-    PlatformComponent,
-    BalancesComponent,
-  ],
+  declarations: [SidebarComponent, UserPanelComponent, PlatformComponent],
   imports: [
     CommonModule,
     PlatformRoutingModule,

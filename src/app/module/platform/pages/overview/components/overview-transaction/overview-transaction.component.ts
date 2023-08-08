@@ -35,6 +35,12 @@ export class OverviewTransactionComponent implements OnInit {
       price: '$160.00',
       date: '17 May 2023',
     },
+    {
+      name: 'GTR5',
+      desc: 'Gadget & Gear',
+      price: '$160.00',
+      date: '17 May 2023',
+    },
   ];
 
   constructor(private overviewService: OverviewService) {}
