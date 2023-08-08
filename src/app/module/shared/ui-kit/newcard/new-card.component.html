@@ -1,4 +1,8 @@
-<div class="card flex flex_column" [style.width]="width">
+<div
+  class="card flex flex_column"
+  [style.width.px]="width"
+  [style.margin-bottom.px]="marginBottom"
+>
   <ng-content select="[card-header]"></ng-content>
   <ng-content select="[card-content]"></ng-content>
 </div>

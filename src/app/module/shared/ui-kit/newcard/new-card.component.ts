@@ -6,5 +6,6 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./new-card.component.scss'],
 })
 export class NewcardComponent {
-  @Input() width!: string;
+  @Input() width?: string;
+  @Input() marginBottom?: string;
 }

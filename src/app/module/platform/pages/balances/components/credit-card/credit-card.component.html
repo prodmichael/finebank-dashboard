@@ -1,17 +1,23 @@
-<app-new-card [width]="'352px'">
+<app-new-card [width]="'352'" [marginBottom]="'40'">
   <app-card-header card-header>
     <p class="text text-16-24 text_bold t-gray-02">Credit Card</p>
     <div class="flex flex_align-center gap-4">
-      <p class="text text-12-16 text_medium t-gray-01">Master Card</p>
+      <p class="text text-12-16 text_medium t-gray-01">
+        {{ creditCard.name }}
+      </p>
       <img src="../../../../../../../assets/icons/mastercard-logo.png" alt="" />
     </div>
   </app-card-header>
   <app-card-content card-content>
     <app-spacing type="l3"></app-spacing>
-    <p class="text text-20-28 text_semibold t-black">3388 4556 8860 8***</p>
+    <p class="text text-20-28 text_semibold t-black">
+      {{ creditCard.number }}
+    </p>
     <p class="text text-14-20 text_regular t-gray-03">Account Number</p>
     <app-spacing type="l3"></app-spacing>
-    <p class="text text-20-28 text_semibold t-black">$25000</p>
+    <p class="text text-20-28 text_semibold t-black">
+      ${{ creditCard.amount }}
+    </p>
     <p class="text text-14-20 text_regular t-gray-03">Total amount</p>
     <app-spacing type="l4"></app-spacing>
     <div class="flex flex_align-center flex_justify-between">
