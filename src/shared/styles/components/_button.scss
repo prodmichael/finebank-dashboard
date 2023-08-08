@@ -25,6 +25,14 @@
   }
 }
 
+@mixin btn-custom-36 {
+  height: 36px;
+  padding: 0 20px;
+  span {
+    @include weight-medium();
+  }
+}
+
 @mixin btn-disabled {
   cursor: not-allowed;
   background-color: #337b73;
@@ -152,6 +160,9 @@
     }
     &_small {
       @include btn-small;
+    }
+    &_custom-36 {
+      @include btn-custom-36;
     }
   }
 

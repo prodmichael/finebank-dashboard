@@ -1,0 +1,7 @@
+@import "../../../../../../../shared/styles/vars.colors";
+
+.card-content {
+  &_border {
+    border-bottom: 1px solid map-get($project-colors, "colors", gray-06);
+  }
+}

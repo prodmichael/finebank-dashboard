@@ -1,0 +1,6 @@
+@import "../../../../../../../shared/styles/vars.colors";
+
+.card-header {
+  height: 44px;
+  border-bottom: 1px solid map-get($project-colors, "colors", gray-06);
+}
