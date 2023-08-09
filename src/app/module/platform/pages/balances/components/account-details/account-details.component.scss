@@ -1,0 +1,10 @@
+app-card-content {
+  width: 850px;
+  &:last-child {
+    width: 100%;
+  }
+}
+
+.item {
+  width: 33.33%;
+}

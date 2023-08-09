@@ -28,9 +28,6 @@
 @mixin btn-custom-36 {
   height: 36px;
   padding: 0 20px;
-  span {
-    @include weight-medium();
-  }
 }
 
 @mixin btn-disabled {

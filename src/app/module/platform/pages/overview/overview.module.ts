@@ -36,7 +36,6 @@ import { OverviewService } from './services/overview.service';
     OverviewStatisticsComponent,
     OverviewBreakdownComponent,
     OverviewModalWindowComponent,
-    TransformNumberPipe,
   ],
   imports: [
     CommonModule,
