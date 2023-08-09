@@ -19,6 +19,5 @@ export class AccountDetailsComponent implements OnInit {
   ngOnInit() {
     const cardId = Number(this.route.snapshot.params['id']);
     this.creditCard = this.balancesService.getCreditCardId(cardId);
-    console.log(this.creditCard);
   }
 }

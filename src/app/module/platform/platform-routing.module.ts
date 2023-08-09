@@ -30,6 +30,14 @@ const routes: Routes = [
             (m) => m.BalancesModule
           ),
       },
+      {
+        path: 'transactions',
+        data: { routes: 'transactions' },
+        loadChildren: () =>
+          import('./pages/transactions/transactions.module').then(
+            (m) => m.TransactionsModule
+          ),
+      },
     ],
   },
 ];
