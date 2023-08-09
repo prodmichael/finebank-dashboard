@@ -7,7 +7,13 @@ import { Component, Input } from '@angular/core';
 })
 export class CreditCardComponent {
   @Input() creditCard?: any;
+
   constructor() {}
 
-  hide() {}
+  hide(cardNumber: string) {
+    const hiddenPart = '*'.repeat(cardNumber.length - 4);
+    const visiblePart = cardNumber.slice(-4);
+
+    return hiddenPart + visiblePart;
+  }
 }

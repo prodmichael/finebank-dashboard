@@ -33,13 +33,6 @@ export class OverviewCardComponent implements OnInit {
   maxVisibleIndicators: number = 3;
   visibleIndicators: number[] = [];
 
-  hideFirstNumbers(cardNumber: string): string {
-    return cardNumber
-      .slice(cardNumber.length - 4, cardNumber.length)
-      .padStart(16, '*')
-      .replace(/(.{4})/g, '$1 ');
-  }
-
   ngOnInit() {
     this.updateVisibleIndicators();
   }

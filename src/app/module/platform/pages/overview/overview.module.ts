@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTabsModule } from '@angular/material/tabs';
+import { TransformNumberPipe } from 'src/app/module/shared/pipes/transform-number.pipe';
 import { BoardDateModule } from 'src/app/module/shared/ui-kit/board-date/board-date.module';
 import { ButtonModule } from 'src/app/module/shared/ui-kit/button/button.module';
 import { CreditCardModule } from 'src/app/module/shared/ui-kit/credit-card/credit-card.module';
@@ -9,6 +10,7 @@ import { ItemModule } from 'src/app/module/shared/ui-kit/item/item.module';
 import { ModalWindowModule } from 'src/app/module/shared/ui-kit/modal-window/modal-window.module';
 import { ProgressBarModule } from 'src/app/module/shared/ui-kit/progress-bar/progress-bar.module';
 import { AppSpacingModule } from 'src/app/module/shared/ui-kit/spacing/app-spacing.module';
+import { TabModule } from 'src/app/module/shared/ui-kit/tab/tab.module';
 import { CardModule } from '../../../shared/ui-kit/card/card.module';
 import { HeaderModule } from '../modules/header/header.module';
 import { OverviewBillComponent } from './components/overview-bill/overview-bill.component';
@@ -22,7 +24,6 @@ import { OverviewRoutingModule } from './overview-routing.module';
 import { OverviewComponent } from './overview.component';
 import { OverviewHomeComponent } from './pages/overview-home/overview-home.component';
 import { OverviewService } from './services/overview.service';
-import { TabModule } from 'src/app/module/shared/ui-kit/tab/tab.module';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { TabModule } from 'src/app/module/shared/ui-kit/tab/tab.module';
     OverviewStatisticsComponent,
     OverviewBreakdownComponent,
     OverviewModalWindowComponent,
+    TransformNumberPipe,
   ],
   imports: [
     CommonModule,

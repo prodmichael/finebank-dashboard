@@ -19,7 +19,7 @@
       <p class="text text-16-24 text_bold t-white">{{ card.type }}</p>
       <div class="flex flex_align-center flex_justify-between">
         <p class="text text-14-20 text_medium t-special-white">
-          {{ hideFirstNumbers(card.number) }}
+          {{ card.number | transformNumber }}
         </p>
         <div class="flex flex_align-center gap-16">
           <p class="text text-16-24 text_bold t-white">{{ card.balance }}</p>
