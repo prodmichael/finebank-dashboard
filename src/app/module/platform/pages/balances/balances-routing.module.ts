@@ -15,7 +15,7 @@ const routes: Routes = [
         component: BalancesHomeComponent,
       },
       {
-        path: 'details',
+        path: 'details/:id',
         component: AccountDetailsComponent,
       },
     ],

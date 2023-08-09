@@ -9,7 +9,9 @@
       <div class="flex flex_align-center">
         <div class="item flex flex_grow flex_column">
           <p class="text text-16-24 text_regular t-gray-03">Bank Name</p>
-          <p class="text text-18-20 text_bold t--secondary">AB Bank Ltd.</p>
+          <p class="text text-18-20 text_bold t--secondary">
+            {{ creditCard?.name }}
+          </p>
         </div>
         <div class="item flex flex_grow flex_column">
           <p class="text text-16-24 text_regular t-gray-03">Account type</p>
@@ -17,7 +19,9 @@
         </div>
         <div class="item flex flex_column">
           <p class="text text-16-24 text_regular t-gray-03">Balance</p>
-          <p class="text text-18-20 text_bold t--secondary">$25,056.00</p>
+          <p class="text text-18-20 text_bold t--secondary">
+            ${{ creditCard?.amount }}
+          </p>
         </div>
       </div>
       <app-spacing type="l7"></app-spacing>
@@ -31,7 +35,7 @@
         <div class="item flex flex_grow flex_column">
           <p class="text text-16-24 text_regular t-gray-03">Account Number</p>
           <p class="text text-18-20 text_bold t--secondary">
-            133 456 886 8****
+            {{ creditCard?.number }}
           </p>
         </div>
         <div class="item flex"></div>

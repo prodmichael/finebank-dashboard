@@ -4,10 +4,14 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'transformNumber',
 })
 export class TransformNumberPipe implements PipeTransform {
-  transform(cardNumber: string) {
-    return cardNumber
-      .slice(cardNumber.length - 4, cardNumber.length)
-      .padStart(16, '*')
-      .replace(/(.{4})/g, '$1 ');
+  transform(value: string, defaultValue = 'N/A') {
+    if (value) {
+      return value
+        .slice(value.length - 4, value.length)
+        .padStart(16, '*')
+        .replace(/(.{4})/g, '$1 ');
+    } else {
+      return defaultValue;
+    }
   }
 }

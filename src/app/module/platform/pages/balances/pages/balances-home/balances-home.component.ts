@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { BalancesService } from '../../services/balances.service';
 import { CreditCard } from '../../interfaces/balances.interface';
+import { BalancesService } from '../../services/balances.service';
 
 @Component({
   selector: 'app-balances-home',
@@ -11,7 +11,8 @@ export class BalancesHomeComponent implements OnInit {
   creditCards?: CreditCard[];
 
   constructor(public balancesService: BalancesService) {}
-  ngOnInit(): void {
+
+  ngOnInit() {
     this.creditCards = this.balancesService.getCreditCards();
   }
 }
