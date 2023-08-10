@@ -1,9 +1,11 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { CreditCard } from '../interfaces/balances.interface';
 
 @Injectable()
 export class BalancesService {
-  constructor() {}
+  constructor(private http: HttpClient) {}
 
   creditCards: CreditCard[] = [
     {
@@ -43,8 +45,9 @@ export class BalancesService {
     },
   ];
 
-  getCreditCards(): CreditCard[] {
-    return this.creditCards;
+  getCreditCards(): Observable<CreditCard[]> {
+    const apiUrl = 'api/credit-cards';
+    return this.http.get<CreditCard[]>(apiUrl);
   }
 
   getCreditCardId(id: number): CreditCard | undefined {

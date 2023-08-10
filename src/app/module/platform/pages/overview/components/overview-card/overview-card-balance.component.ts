@@ -10,7 +10,7 @@ import { BalancesService } from './../../../balances/services/balances.service';
 export class OverviewCardComponent implements OnInit {
   isActive = true;
   currentCardIndex: number = 0;
-  cards!: CreditCard[];
+  cards!: CreditCard;
   indicators: number[] = [];
   currentIndicatorIndex: number = 0;
   maxVisibleIndicators: number = 3;
@@ -20,22 +20,22 @@ export class OverviewCardComponent implements OnInit {
 
   ngOnInit() {
     this.updateVisibleIndicators();
-    this.cards = this.balancesService.getCreditCards();
-    console.log(this.cards);
-    this.indicators = Array.from({ length: this.cards.length }, (_, i) => i);
+    // this.cards = this.balancesService.getCreditCards().subscribe();
+    // console.log(this.cards);
+    // this.indicators = Array.from({ length: this.cards.length }, (_, i) => i);
   }
 
   // Навигация слайдера
-  nextCard() {
-    this.currentCardIndex = (this.currentCardIndex + 1) % this.cards.length;
-    this.currentIndicatorIndex = this.currentCardIndex;
-  }
+  // nextCard() {
+  //   this.currentCardIndex = (this.currentCardIndex + 1) % this.cards.length;
+  //   this.currentIndicatorIndex = this.currentCardIndex;
+  // }
 
-  previousCard() {
-    this.currentCardIndex =
-      (this.currentCardIndex - 1 + this.cards.length) % this.cards.length;
-    this.currentIndicatorIndex = this.currentCardIndex;
-  }
+  // previousCard() {
+  //   this.currentCardIndex =
+  //     (this.currentCardIndex - 1 + this.cards.length) % this.cards.length;
+  //   this.currentIndicatorIndex = this.currentCardIndex;
+  // }
 
   // Показываем только 3 точки
   updateVisibleIndicators() {

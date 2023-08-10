@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { BehaviorSubject, tap } from 'rxjs';
-import { Transaction } from '../../interfaces/overview.interface';
+import { Transaction } from '../../../transactions/interfaces/transactions.interface';
 import { OverviewService } from './../../services/overview.service';
 
 @Component({

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { tap } from 'rxjs';
 import { CreditCard } from '../../interfaces/balances.interface';
 import { BalancesService } from '../../services/balances.service';
 
@@ -13,6 +14,22 @@ export class BalancesHomeComponent implements OnInit {
   constructor(public balancesService: BalancesService) {}
 
   ngOnInit() {
-    this.creditCards = this.balancesService.getCreditCards();
+    this.getCreditCardsAll();
+  }
+
+  getCreditCardsAll() {
+    this.balancesService
+      .getCreditCards()
+      .pipe(
+        tap(
+          (data: CreditCard[]) => {
+            console.log(data);
+          },
+          (error) => {
+            console.log('Error when receiving card data', error);
+          }
+        )
+      )
+      .subscribe();
   }
 }

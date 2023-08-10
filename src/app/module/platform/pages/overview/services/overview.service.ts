@@ -2,7 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Observable } from 'rxjs';
-import { Transaction } from '../interfaces/overview.interface';
+
+import { Transaction } from '../../transactions/interfaces/transactions.interface';
 import { OverviewModalWindowComponent } from '../modules/overview-modal-window/overview-modal-window.component';
 
 @Injectable()
