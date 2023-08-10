@@ -1,36 +1,38 @@
-<app-card>
-  <ng-container card-header-title>
-    <p class="text text-22-32 text_regular t-gray-02">Total Balance</p>
-  </ng-container>
-  <ng-container card-content>
-    <app-spacing type="l3-5"></app-spacing>
-    <div class="flex flex_align-center border">
-      <p class="text text-22-32 text_extrabold t-black">$240,399</p>
-    </div>
+<p class="text text-22-32 text_regular t-gray-02">Total Balance</p>
+<app-spacing type="l1"></app-spacing>
+<app-card [width]="'352'" [height]="'245'">
+  <app-card-header card-header>
+    <p class="text text-22-32 text_extrabold t-black">$240,399</p>
+    <app-button routerLink="/platform/balances" type="link" size="normal">
+      <span class="text text-14-20 text_medium t-secondary">All Accounts</span>
+    </app-button>
+  </app-card-header>
+  <app-spacing type="l2"></app-spacing>
+  <app-card-content card-content>
     <app-spacing type="l2"></app-spacing>
     <app-credit-card
       *ngFor="let card of cards; let i = index"
       [hidden]="i != currentCardIndex"
+      [ngClass]="{ active: i === currentCardIndex }"
     >
       <div class="flex flex_align-center flex_justify-between">
         <p class="text text-14-20 text_medium t-special-white">Account type</p>
         <img src="../../../../../../../assets/mastercard.png" alt="" />
       </div>
-      <p class="text text-16-24 text_bold t-white">{{ card.type }}</p>
+      <p class="text text-16-24 text_bold t-white">Credit Card</p>
       <div class="flex flex_align-center flex_justify-between">
         <p class="text text-14-20 text_medium t-special-white">
           {{ card.number }}
         </p>
         <div class="flex flex_align-center gap-16">
-          <p class="text text-16-24 text_bold t-white">{{ card.balance }}</p>
+          <p class="text text-16-24 text_bold t-white">${{ card.amount }}</p>
           <app-button custom="white" type="link">
             <mat-icon svgIcon="arrow-up-right"></mat-icon>
           </app-button>
         </div>
       </div>
     </app-credit-card>
-  </ng-container>
-  <ng-container card-content>
+    <app-spacing type="l3-5"></app-spacing>
     <div class="flex flex_align-center flex_justify-between">
       <app-button
         custom="default-link"
@@ -58,5 +60,5 @@
         <mat-icon class="stroke" svgIcon="chevron-right"></mat-icon>
       </app-button>
     </div>
-  </ng-container>
+  </app-card-content>
 </app-card>

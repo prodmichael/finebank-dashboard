@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CreditCard } from '../../../balances/interfaces/balances.interface';
+import { BalancesService } from './../../../balances/services/balances.service';
 
 @Component({
   selector: 'app-overview-card-balance',
@@ -8,35 +10,22 @@ import { Component, OnInit } from '@angular/core';
 export class OverviewCardComponent implements OnInit {
   isActive = true;
   currentCardIndex: number = 0;
-  cards: any[] = [
-    {
-      img: '',
-      type: 'Credit card',
-      number: '2345 3233 3233 2598',
-      balance: '$25000',
-    },
-    {
-      img: '',
-      type: 'Debit card',
-      number: '6566 5433 3333 2293',
-      balance: '$12000',
-    },
-    {
-      img: '',
-      type: 'Credit card',
-      number: '3213 2131 4321 8358',
-      balance: '$53240',
-    },
-  ];
-  indicators: number[] = Array.from({ length: this.cards.length }, (_, i) => i);
+  cards!: CreditCard[];
+  indicators: number[] = [];
   currentIndicatorIndex: number = 0;
   maxVisibleIndicators: number = 3;
-  visibleIndicators: number[] = [];
+  visibleIndicators: number[] = [0, 1, 2];
+
+  constructor(private balancesService: BalancesService) {}
 
   ngOnInit() {
     this.updateVisibleIndicators();
+    this.cards = this.balancesService.getCreditCards();
+    console.log(this.cards);
+    this.indicators = Array.from({ length: this.cards.length }, (_, i) => i);
   }
 
+  // Навигация слайдера
   nextCard() {
     this.currentCardIndex = (this.currentCardIndex + 1) % this.cards.length;
     this.currentIndicatorIndex = this.currentCardIndex;
@@ -48,10 +37,12 @@ export class OverviewCardComponent implements OnInit {
     this.currentIndicatorIndex = this.currentCardIndex;
   }
 
+  // Показываем только 3 точки
   updateVisibleIndicators() {
-    this.visibleIndicators = this.indicators.slice(
-      this.currentCardIndex,
-      this.currentCardIndex + this.maxVisibleIndicators
-    );
+    // const startIndex = this.currentCardIndex;
+    // this.visibleIndicators = [];
+    // for (let i = startIndex; i < startIndex + 3; i++) {
+    //   this.visibleIndicators.push(i % this.cards.length);
+    // }
   }
 }

@@ -1,18 +1,17 @@
-<app-card>
-  <ng-container card-header-title>
-    <p class="text text-22-32 text_regular t-gray-02">Goals</p>
-  </ng-container>
-  <ng-container card-content>
-    <app-spacing type="l3-5"></app-spacing>
-    <div class="flex flex_align-center flex_justify-between border">
-      <div class="flex flex_align-center gap-9">
-        <p class="text text-22-32 text_extrabold t-black">$20,000</p>
-        <app-button size="normal" type="link-edit">
-          <mat-icon class="stroke" svgIcon="edit"></mat-icon>
-        </app-button>
-      </div>
-      <p class="text text-14-20 text_medium t-secondary">May, 2023</p>
+<p class="text text-22-32 text_regular t-gray-02">Goals</p>
+<app-spacing type="l1"></app-spacing>
+<app-card [width]="'352'" [height]="'245'">
+  <app-card-header card-header>
+    <div class="flex flex_align-center gap-9">
+      <p class="text text-22-32 text_extrabold t-black">$20,000</p>
+      <app-button size="normal" type="link-edit">
+        <mat-icon class="stroke" svgIcon="edit"></mat-icon>
+      </app-button>
     </div>
+    <p class="text text-14-20 text_medium t-secondary">May, 2023</p>
+  </app-card-header>
+  <app-spacing type="l2"></app-spacing>
+  <app-card-content card-content>
     <app-spacing type="l3-5"></app-spacing>
     <div class="flex gap-16">
       <div class="flex flex_column">
@@ -52,5 +51,5 @@
         <p class="text text-12-16 text_medium t-black">Target vs Achievement</p>
       </div>
     </div>
-  </ng-container>
+  </app-card-content>
 </app-card>
