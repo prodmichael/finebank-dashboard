@@ -6,6 +6,6 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./card.component.scss'],
 })
 export class CardComponent {
-  isActive = true;
-  @Input() height!: string;
+  @Input() width?: string;
+  @Input() marginBottom?: string;
 }

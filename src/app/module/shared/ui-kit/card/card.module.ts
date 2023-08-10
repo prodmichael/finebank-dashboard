@@ -1,11 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { AppSpacingModule } from 'src/app/module/shared/ui-kit/spacing/app-spacing.module';
 import { CardComponent } from './card.component';
+import { CardHeaderComponent } from './components/card-header/card-header.component';
+import { CardContentComponent } from './components/card-content/card-content.component';
 
 @NgModule({
-  declarations: [CardComponent],
-  exports: [CardComponent],
-  imports: [CommonModule, AppSpacingModule],
+  declarations: [CardComponent, CardHeaderComponent, CardContentComponent],
+  imports: [CommonModule],
+  exports: [CardComponent, CardHeaderComponent, CardContentComponent],
 })
 export class CardModule {}

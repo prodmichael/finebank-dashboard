@@ -10,7 +10,7 @@
       *ngFor="let creditCard of creditCards"
       [creditCard]="creditCard"
     ></app-credit-card>
-    <app-new-card [width]="'352'" [marginBottom]="'40'">
+    <app-card [width]="'352'" [marginBottom]="'40'">
       <app-card-content card-content>
         <app-button size="custom-36" type="primary">
           <span class="text text-14-20 text_bold t-white">Add accounts</span>
@@ -21,6 +21,6 @@
           >
         </app-button>
       </app-card-content>
-    </app-new-card>
+    </app-card>
   </div>
 </div>

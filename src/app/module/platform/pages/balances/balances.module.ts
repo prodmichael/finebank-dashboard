@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { TransformNumberPipe } from 'src/app/module/shared/pipes/transform-number.pipe';
 import { ButtonModule } from 'src/app/module/shared/ui-kit/button/button.module';
-import { NewcardModule } from 'src/app/module/shared/ui-kit/newcard/new-card.module';
+import { CardModule } from 'src/app/module/shared/ui-kit/card/card.module';
 import { AppSpacingModule } from 'src/app/module/shared/ui-kit/spacing/app-spacing.module';
 import { HeaderModule } from '../modules/header/header.module';
 import { BalancesRoutingModule } from './balances-routing.module';
@@ -24,7 +24,7 @@ import { BalancesService } from './services/balances.service';
   imports: [
     CommonModule,
     BalancesRoutingModule,
-    NewcardModule,
+    CardModule,
     HeaderModule,
     AppSpacingModule,
     ButtonModule,

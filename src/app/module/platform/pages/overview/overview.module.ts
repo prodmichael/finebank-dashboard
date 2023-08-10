@@ -11,7 +11,6 @@ import { ModalWindowModule } from 'src/app/module/shared/ui-kit/modal-window/mod
 import { ProgressBarModule } from 'src/app/module/shared/ui-kit/progress-bar/progress-bar.module';
 import { AppSpacingModule } from 'src/app/module/shared/ui-kit/spacing/app-spacing.module';
 import { TabModule } from 'src/app/module/shared/ui-kit/tab/tab.module';
-import { CardModule } from '../../../shared/ui-kit/card/card.module';
 import { HeaderModule } from '../modules/header/header.module';
 import { OverviewBillComponent } from './components/overview-bill/overview-bill.component';
 import { OverviewBreakdownComponent } from './components/overview-breakdown/overview-breakdown.component';
@@ -24,6 +23,7 @@ import { OverviewRoutingModule } from './overview-routing.module';
 import { OverviewComponent } from './overview.component';
 import { OverviewHomeComponent } from './pages/overview-home/overview-home.component';
 import { OverviewService } from './services/overview.service';
+import { CardModule } from 'src/app/module/shared/ui-kit/card/card.module';
 
 @NgModule({
   declarations: [
@@ -42,7 +42,6 @@ import { OverviewService } from './services/overview.service';
     OverviewRoutingModule,
     HeaderModule,
     AppSpacingModule,
-    CardModule,
     ButtonModule,
     MatIconModule,
     ProgressBarModule,
@@ -52,6 +51,7 @@ import { OverviewService } from './services/overview.service';
     ModalWindowModule,
     ItemModule,
     TabModule,
+    CardModule,
   ],
   providers: [OverviewService],
 })

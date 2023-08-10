@@ -1,10 +1,8 @@
-<div class="flex flex_column">
-  <div class="flex flex_align-center flex_justify-between">
-    <ng-content select="[card-header-title]"></ng-content>
-    <ng-content select="[card-header-btn]"></ng-content>
-  </div>
-  <app-spacing type="l1"></app-spacing>
-  <div class="card-content flex flex_column">
-    <ng-content select="[card-content]"></ng-content>
-  </div>
+<div
+  class="card flex flex_column"
+  [style.width.px]="width"
+  [style.margin-bottom.px]="marginBottom"
+>
+  <ng-content select="[card-header]"></ng-content>
+  <ng-content select="[card-content]"></ng-content>
 </div>
