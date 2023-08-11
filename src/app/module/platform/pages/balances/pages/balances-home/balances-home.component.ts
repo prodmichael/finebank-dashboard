@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { tap } from 'rxjs';
+import { BehaviorSubject, catchError, of, tap } from 'rxjs';
 import { CreditCard } from '../../interfaces/balances.interface';
 import { BalancesService } from '../../services/balances.service';
 
@@ -9,25 +9,26 @@ import { BalancesService } from '../../services/balances.service';
   styleUrls: ['./balances-home.component.scss'],
 })
 export class BalancesHomeComponent implements OnInit {
-  creditCards?: CreditCard[];
+  public creditCards$ = new BehaviorSubject<CreditCard[]>([]);
 
   constructor(public balancesService: BalancesService) {}
 
   ngOnInit() {
-    this.getCreditCardsAll();
+    this.getAllCreditCards();
   }
 
-  getCreditCardsAll() {
+  getAllCreditCards() {
     this.balancesService
-      .getCreditCards()
+      .getAllCreditCards()
       .pipe(
         tap(
-          (data: CreditCard[]) => {
-            console.log(data);
+          (resp) => {
+            console.log(resp);
+            this.creditCards$.next(resp);
           },
-          (error) => {
-            console.log('Error when receiving card data', error);
-          }
+          catchError(() => {
+            return of();
+          })
         )
       )
       .subscribe();
