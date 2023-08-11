@@ -11,7 +11,7 @@ import { Observable, catchError, throwError } from 'rxjs';
 import { AuthService } from 'src/app/module/auth/services/auth.service';
 
 @Injectable()
-export class AuthInterceptor implements HttpInterceptor {
+export class TokenInterceptor implements HttpInterceptor {
   constructor(private authService: AuthService, private router: Router) {}
 
   intercept(
@@ -19,11 +19,11 @@ export class AuthInterceptor implements HttpInterceptor {
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
     if (this.authService.isAuthenticated()) {
-      // req = req.clone({
-      //   setHeaders: {
-      //     Authorization: this.authService.getToken(),
-      //   },
-      // });
+      req = req.clone({
+        setHeaders: {
+          Authorization: this.authService.getToken(),
+        },
+      });
     }
 
     return next.handle(req).pipe(
@@ -33,7 +33,7 @@ export class AuthInterceptor implements HttpInterceptor {
           this.authService.logout();
           this.router.navigate(['login'], {
             queryParams: {
-              authFailed: true,
+              sessionFailed: true,
             },
           });
         }

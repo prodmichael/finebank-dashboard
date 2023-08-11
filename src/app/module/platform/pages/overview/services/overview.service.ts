@@ -1,9 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { Observable } from 'rxjs';
 
-import { Transaction } from '../../transactions/interfaces/transactions.interface';
 import { OverviewModalWindowComponent } from '../modules/overview-modal-window/overview-modal-window.component';
 
 @Injectable()
@@ -14,9 +12,7 @@ export class OverviewService {
     this.dialog.open(OverviewModalWindowComponent);
   }
 
-  getTransaction(): Observable<Transaction[]> {
-    return this.http.get<Transaction[]>(
-      `https://finebank-f51fe-default-rtdb.firebaseio.com/transactions/transaction.json`
-    );
-  }
+  // getTransaction(): Observable<Transaction[]> {
+  //   return this.http.get<Transaction[]>();
+  // }
 }

@@ -28,10 +28,12 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.route.queryParams.subscribe((params: Params) => {
-      if (params['loginAgain']) {
-        this.message = 'Access Denied';
-      } else if (params['authFailed']) {
-        this.message = 'The session has expired, enter the data again';
+      if (params['registered']) {
+        this.message = 'You can log in';
+      } else if (params['accessDenied']) {
+        this.message = 'To get started, log in';
+      } else if (params['sessionFailed']) {
+        this.message = 'Please log in';
       }
     });
 

@@ -10,7 +10,6 @@ export class AuthService {
   private token = null;
 
   login(user: User): Observable<{ token: string }> {
-    user.returnSecureToken = true;
     return this.http.post<{ token: string }>(`/api/auth/login`, user).pipe(
       tap(({ token }) => {
         localStorage.setItem('auth-token', token);
@@ -20,7 +19,6 @@ export class AuthService {
   }
 
   register(user: newUser): Observable<newUser> {
-    user.returnSecureToken = true;
     return this.http.post<newUser>(`/api/auth/register`, user);
   }
 

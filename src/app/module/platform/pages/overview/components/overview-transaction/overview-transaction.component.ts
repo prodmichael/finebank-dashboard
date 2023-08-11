@@ -1,6 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { BehaviorSubject, tap } from 'rxjs';
-import { Transaction } from '../../../transactions/interfaces/transactions.interface';
 import { OverviewService } from './../../services/overview.service';
 
 @Component({
@@ -9,7 +7,7 @@ import { OverviewService } from './../../services/overview.service';
   styleUrls: ['./overview-transaction.component.scss'],
 })
 export class OverviewTransactionComponent implements OnInit {
-  public transactions$ = new BehaviorSubject<Transaction[]>([]);
+  // public transactions$ = new BehaviorSubject<Transaction[]>([]);
   @Input() transactions = [
     {
       name: 'GTR5',
@@ -46,20 +44,20 @@ export class OverviewTransactionComponent implements OnInit {
   constructor(private overviewService: OverviewService) {}
 
   ngOnInit() {
-    this.getTransactions();
+    // this.getTransactions();
   }
 
-  public getTransactions() {
-    this.overviewService
-      .getTransaction()
-      .pipe(
-        tap((response) => {
-          this.transactions$.next(Object.values(response));
-          console.log(response);
-        })
-      )
-      .subscribe();
-  }
+  // public getTransactions() {
+  //   this.overviewService
+  //     .getTransaction()
+  //     .pipe(
+  //       tap((response) => {
+  //         this.transactions$.next(Object.values(response));
+  //         console.log(response);
+  //       })
+  //     )
+  //     .subscribe();
+  // }
 
   selected() {}
 }

@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
-import { AuthGuard } from '../shared/services/guards/auth.guard';
 import { ButtonModule } from '../shared/ui-kit/button/button.module';
 import { NavMenuModule } from '../shared/ui-kit/nav-menu/nav-menu.module';
 import { ProfilePictureModule } from '../shared/ui-kit/profile-picture/profile-picture.module';
@@ -26,6 +25,6 @@ import { PlatformComponent } from './platform.component';
     MatDialogModule,
     MatMenuModule,
   ],
-  providers: [AuthGuard],
+  providers: [],
 })
 export class PlatformModule {}
