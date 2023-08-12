@@ -9,7 +9,7 @@ import { BalancesService } from '../../services/balances.service';
   styleUrls: ['./account-details.component.scss'],
 })
 export class AccountDetailsComponent implements OnInit {
-  creditCard?: CreditCard | undefined;
+  creditCards: CreditCard[] = [];
 
   constructor(
     private route: ActivatedRoute,
@@ -17,7 +17,16 @@ export class AccountDetailsComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    // const cardId = Number(this.route.snapshot.params['id']);
-    // this.creditCard = this.balancesService.getCreditCardId(cardId);
+    const cardId = this.route.snapshot.params['id'];
+    console.log(cardId);
+    this.balancesService.getCreditCardsById(cardId).subscribe(
+      (card) => {
+        console.log(card);
+        this.creditCards = card;
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
   }
 }
