@@ -9,7 +9,7 @@ import { BalancesService } from '../../services/balances.service';
   styleUrls: ['./account-details.component.scss'],
 })
 export class AccountDetailsComponent implements OnInit {
-  creditCards: CreditCard[] = [];
+  creditCard?: CreditCard;
 
   constructor(
     private route: ActivatedRoute,
@@ -22,7 +22,7 @@ export class AccountDetailsComponent implements OnInit {
     this.balancesService.getCreditCardsById(cardId).subscribe(
       (card) => {
         console.log(card);
-        this.creditCards = card;
+        this.creditCard = card;
       },
       (error) => {
         console.log(error);

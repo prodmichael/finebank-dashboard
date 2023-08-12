@@ -30,7 +30,6 @@ export class BalancesHomeComponent implements OnInit, OnDestroy {
         tap(
           (resp) => {
             this.creditCards$.next(resp);
-            console.log(resp);
           },
           catchError(() => {
             return of();

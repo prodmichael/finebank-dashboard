@@ -12,7 +12,7 @@ export class BalancesService {
     return this.http.get<CreditCard[]>('api/credit-cards');
   }
 
-  getCreditCardsById(id?: string): Observable<CreditCard[]> {
-    return this.http.get<CreditCard[]>(`api/credit-cards/${id}`);
+  getCreditCardsById(id?: string): Observable<CreditCard> {
+    return this.http.get<CreditCard>(`api/credit-cards/${id}`);
   }
 }
