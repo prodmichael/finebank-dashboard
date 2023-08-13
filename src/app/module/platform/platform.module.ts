@@ -12,6 +12,7 @@ import { UserPanelComponent } from './components/sidebar/components/user-panel/u
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { PlatformRoutingModule } from './platform-routing.module';
 
+import { LoaderModule } from '../shared/ui-kit/loader/loader.module';
 import { PlatformComponent } from './platform.component';
 
 @NgModule({

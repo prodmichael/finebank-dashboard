@@ -4,6 +4,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { TransformNumberPipe } from 'src/app/module/shared/pipes/transform-number.pipe';
 import { ButtonModule } from 'src/app/module/shared/ui-kit/button/button.module';
 import { CardModule } from 'src/app/module/shared/ui-kit/card/card.module';
+import { LoaderModule } from 'src/app/module/shared/ui-kit/loader/loader.module';
 import { AppSpacingModule } from 'src/app/module/shared/ui-kit/spacing/app-spacing.module';
 import { HeaderModule } from '../modules/header/header.module';
 import { BalancesRoutingModule } from './balances-routing.module';
@@ -29,6 +30,7 @@ import { BalancesService } from './services/balances.service';
     AppSpacingModule,
     ButtonModule,
     MatIconModule,
+    LoaderModule,
   ],
   providers: [BalancesService],
 })
