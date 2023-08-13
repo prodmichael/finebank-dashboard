@@ -10,6 +10,7 @@ import { BalancesService } from './../../../balances/services/balances.service';
 })
 export class OverviewCardComponent implements OnInit, OnDestroy {
   isActive = true;
+  isLoading = false;
   currentCardIndex: number = 0;
   creditCards: CreditCard[] = [];
   indicators: number[] = [];
@@ -21,12 +22,9 @@ export class OverviewCardComponent implements OnInit, OnDestroy {
   constructor(private balancesService: BalancesService) {}
 
   ngOnInit() {
+    this.isLoading = true;
     this.updateVisibleIndicators();
-    this.aSub = this.balancesService
-      .getAllCreditCards()
-      .subscribe((creditCard) => {
-        this.creditCards = creditCard;
-      });
+    this.getAllCreditCards();
     this.indicators = Array.from(
       { length: this.creditCards.length },
       (_, i) => i
@@ -60,5 +58,14 @@ export class OverviewCardComponent implements OnInit, OnDestroy {
     for (let i = startIndex; i < startIndex + 3; i++) {
       this.visibleIndicators.push(i % this.creditCards.length);
     }
+  }
+
+  getAllCreditCards() {
+    this.aSub = this.balancesService
+      .getAllCreditCards()
+      .subscribe((creditCard) => {
+        this.isLoading = false;
+        this.creditCards = creditCard;
+      });
   }
 }

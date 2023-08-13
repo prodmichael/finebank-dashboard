@@ -11,9 +11,11 @@ import { BalancesService } from '../../services/balances.service';
 export class BalancesHomeComponent implements OnInit {
   public creditCards$ = new BehaviorSubject<CreditCard[]>([]);
   aSub!: Subscription;
+  isLoading = false;
   constructor(public balancesService: BalancesService) {}
 
   ngOnInit() {
+    this.isLoading = true;
     this.getAllCreditCards();
   }
 
@@ -23,6 +25,7 @@ export class BalancesHomeComponent implements OnInit {
       .pipe(
         tap(
           (resp) => {
+            this.isLoading = false;
             this.creditCards$.next(resp);
           },
           catchError(() => {

@@ -23,6 +23,7 @@ import { OverviewRoutingModule } from './overview-routing.module';
 import { OverviewComponent } from './overview.component';
 import { OverviewHomeComponent } from './pages/overview-home/overview-home.component';
 import { OverviewService } from './services/overview.service';
+import { LoaderModule } from 'src/app/module/shared/ui-kit/loader/loader.module';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import { OverviewService } from './services/overview.service';
     ModalWindowModule,
     ItemModule,
     CardModule,
+    LoaderModule,
   ],
   providers: [OverviewService, BalancesService],
 })

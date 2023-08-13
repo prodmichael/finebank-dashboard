@@ -1,5 +1,6 @@
 <p class="text text-22-32 text_regular t-gray-02">Total Balance</p>
 <app-spacing type="l1"></app-spacing>
+<app-loader *ngIf="isLoading"></app-loader>
 <app-card [width]="'352'" [height]="'245'">
   <app-card-header card-header>
     <p class="text text-22-32 text_extrabold t-black">$240,399</p>
