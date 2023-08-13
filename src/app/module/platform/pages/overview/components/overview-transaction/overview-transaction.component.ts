@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { OverviewService } from './../../services/overview.service';
 
 @Component({
@@ -8,33 +8,33 @@ import { OverviewService } from './../../services/overview.service';
 })
 export class OverviewTransactionComponent implements OnInit {
   // public transactions$ = new BehaviorSubject<Transaction[]>([]);
-  @Input() transactions = [
+  transactions = [
     {
-      name: 'GTR5',
+      name: 'GTR 5',
       desc: 'Gadget & Gear',
       price: '$160.00',
       date: '17 May 2023',
     },
     {
-      name: 'GTR5',
+      name: 'GTR 5',
       desc: 'Gadget & Gear',
       price: '$160.00',
       date: '17 May 2023',
     },
     {
-      name: 'GTR5',
+      name: 'GTR 5',
       desc: 'Gadget & Gear',
       price: '$160.00',
       date: '17 May 2023',
     },
     {
-      name: 'GTR5',
+      name: 'GTR 5',
       desc: 'Gadget & Gear',
       price: '$160.00',
       date: '17 May 2023',
     },
     {
-      name: 'GTR5',
+      name: 'GTR 5',
       desc: 'Gadget & Gear',
       price: '$160.00',
       date: '17 May 2023',
