@@ -37,6 +37,12 @@ const routes: Routes = [
             (m) => m.TransactionsModule
           ),
       },
+      {
+        path: 'bills',
+        data: { routes: 'bills' },
+        loadChildren: () =>
+          import('./pages/bills/bills.module').then((m) => m.BillsModule),
+      },
     ],
   },
 ];

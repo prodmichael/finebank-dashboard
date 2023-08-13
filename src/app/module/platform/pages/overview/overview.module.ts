@@ -10,7 +10,6 @@ import { ItemModule } from 'src/app/module/shared/ui-kit/item/item.module';
 import { ModalWindowModule } from 'src/app/module/shared/ui-kit/modal-window/modal-window.module';
 import { ProgressBarModule } from 'src/app/module/shared/ui-kit/progress-bar/progress-bar.module';
 import { AppSpacingModule } from 'src/app/module/shared/ui-kit/spacing/app-spacing.module';
-
 import { BalancesService } from '../balances/services/balances.service';
 import { HeaderModule } from '../modules/header/header.module';
 import { OverviewBillComponent } from './components/overview-bill/overview-bill.component';
