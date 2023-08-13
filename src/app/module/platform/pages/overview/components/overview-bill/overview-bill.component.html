@@ -8,14 +8,14 @@
 <app-spacing type="l1"></app-spacing>
 <app-card [width]="'352'" [height]="'245'">
   <app-card-content card-content>
-    <div class="flex flex_align-center gap-32">
-      <div class="flex flex_align-center gap-12">
-        <app-board-date [styles]="{ height: '66px' }">
+    <app-item padding="8px 0px 20px">
+      <app-item-img item-img>
+        <div class="flex flex_column">
           <p class="text text-12-16 text_medium t-gray-01">May</p>
-          <ng-container board-date>
-            <p class="text text-22-32 text_extrabold t-black">15</p>
-          </ng-container>
-        </app-board-date>
+          <p class="text text-22-32 text_extrabold t-black">15</p>
+        </div>
+      </app-item-img>
+      <app-item-content item-content>
         <div class="flex flex_column">
           <p class="text text-14-20 text_semibold t-gray-01">Figma</p>
           <p class="text text-16-24 text_bold t-secondary">Figma - Monthly</p>
@@ -23,33 +23,30 @@
             Last Charge - 14 May, 2022
           </p>
         </div>
-      </div>
+      </app-item-content>
       <div class="bill-costs flex flex_center">
         <p class="text text-16-24 text_bold t-secondary">150$</p>
       </div>
-    </div>
-    <app-spacing type="l1"></app-spacing>
-    <div class="border"></div>
-    <app-spacing type="l3-5"></app-spacing>
-    <div class="flex flex_align-center gap-32">
-      <div class="flex flex_align-center gap-12">
-        <app-board-date [styles]="{ height: '66px' }">
-          <p class="text text-12-16 text_medium t-gray-01">Jun</p>
-          <ng-container board-date>
-            <p class="text text-22-32 text_extrabold t-black">16</p>
-          </ng-container>
-        </app-board-date>
+    </app-item>
+    <app-item [border]="false" padding="20px 0px ">
+      <app-item-img item-img>
         <div class="flex flex_column">
-          <p class="text text-14-20 text_semibold t-gray-01">Abode</p>
-          <p class="text text-16-24 text_bold t-secondary">Adobe - Yearly</p>
+          <p class="text text-12-16 text_medium t-gray-01">May</p>
+          <p class="text text-22-32 text_extrabold t-black">15</p>
+        </div>
+      </app-item-img>
+      <app-item-content item-content>
+        <div class="flex flex_column">
+          <p class="text text-14-20 text_semibold t-gray-01">Figma</p>
+          <p class="text text-16-24 text_bold t-secondary">Figma - Monthly</p>
           <p class="text text text-12-16 text_regular t-gray-03">
-            Last Charge - 17 Jun, 2023
+            Last Charge - 14 May, 2022
           </p>
         </div>
+      </app-item-content>
+      <div class="bill-costs flex flex_center">
+        <p class="text text-16-24 text_bold t-secondary">150$</p>
       </div>
-      <div class="bill-costs flex flex_center" style="height: '40px'">
-        <p class="text text-16-24 text_bold t-secondary">$559</p>
-      </div>
-    </div>
+    </app-item>
   </app-card-content>
 </app-card>

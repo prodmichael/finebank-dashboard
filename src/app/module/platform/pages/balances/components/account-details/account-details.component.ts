@@ -18,10 +18,8 @@ export class AccountDetailsComponent implements OnInit {
 
   ngOnInit() {
     const cardId = this.route.snapshot.params['id'];
-    console.log(cardId);
     this.balancesService.getCreditCardsById(cardId).subscribe(
       (card) => {
-        console.log(card);
         this.creditCard = card;
       },
       (error) => {

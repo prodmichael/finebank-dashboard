@@ -4,10 +4,8 @@
   [style.padding]="padding"
 >
   <div class="flex flex_align-center gap-16">
-    <div class="item_img_background">
-      <ng-content select="[item-img]"></ng-content>
-    </div>
-    <ng-content select="[item-title]"></ng-content>
+    <ng-content select="[item-img]"></ng-content>
+    <ng-content select="[item-content]"></ng-content>
   </div>
   <ng-content></ng-content>
 </div>

@@ -19,10 +19,10 @@
           [border]="idx + 1 !== transactions.length"
           *ngFor="let transaction of transactions; let idx = index"
         >
-          <ng-container item-img>
+          <app-item-img item-img>
             <mat-icon class="small stroke" svgIcon="gamepad"></mat-icon>
-          </ng-container>
-          <ng-container item-title>
+          </app-item-img>
+          <app-item-content item-content>
             <div class="flex flex_column">
               <p class="text text-16-24 text_semibold t-black">
                 {{ transaction.name }}
@@ -31,7 +31,7 @@
                 {{ transaction.desc }}
               </p>
             </div>
-          </ng-container>
+          </app-item-content>
           <div class="flex flex_column">
             <p class="text text-16-24 text_semibold t-secondary">
               {{ transaction.price }}
@@ -42,8 +42,8 @@
           </div>
         </app-item>
       </mat-tab>
-      <mat-tab label="Revenue"> </mat-tab>
-      <mat-tab label="Expenses"> </mat-tab>
+      <mat-tab label="Revenue"></mat-tab>
+      <mat-tab label="Expenses"></mat-tab>
     </mat-tab-group>
   </app-card-content>
 </app-card>

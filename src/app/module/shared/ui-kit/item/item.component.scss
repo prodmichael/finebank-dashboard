@@ -1,18 +1,6 @@
 @import "../../../../../shared/styles/vars.colors";
 
 .item {
-  &_img {
-    height: 74px;
-    border-radius: 8px;
-    background: map-get($project-colors, "special-colors", bg);
-
-    &_background {
-      padding: 8px;
-      background-color: map-get($project-colors, "special-colors", bg);
-      border-radius: 8px;
-    }
-  }
-
   &_border {
     border-bottom: 1px solid map-get($project-colors, "colors", gray-06);
   }
