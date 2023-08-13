@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { ItemContentComponent } from './item-content/item-content.component';
-import { ItemImgComponent } from './item-img/item-img.component';
+import { ItemContentComponent } from './components/item-content/item-content.component';
+import { ItemImgComponent } from './components/item-img/item-img.component';
 import { ItemComponent } from './item.component';
 
 @NgModule({

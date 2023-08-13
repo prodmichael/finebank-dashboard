@@ -5,4 +5,51 @@
 <div class="container">
   <p class="text text-22-32 text_regular t-gray-02">Recent Transaction</p>
   <app-spacing type="l3"></app-spacing>
+  <mat-tab-group
+    class="custom-tab-group"
+    mat-stretch-tabs="false"
+    mat-align-tabs="start"
+  >
+    <mat-tab label="All">
+      <app-spacing type="l3"></app-spacing>
+      <app-card>
+        <app-card-header card-header>
+          <p class="column text text-16-24 text_bold t-black">Items</p>
+          <p class="column text text-16-24 text_bold t-black">Shop name</p>
+          <p class="column text text-16-24 text_bold t-black">Date</p>
+          <p class="column text text-16-24 text_bold t-black">Payment Method</p>
+          <p class="column text text-16-24 text_bold t-black">Amount</p>
+        </app-card-header>
+        <app-card-content card-content>
+          <app-item padding="16px 0">
+            <div class="column flex flex_align-center gap-8">
+              <app-item-img item-img>
+                <img
+                  src="../../../../../../../assets/icons/gamepad.svg"
+                  alt=""
+                />
+              </app-item-img>
+              <app-item-content item-content>
+                <p class="text text-16-24 text_semibold t-black">GTR 5</p>
+              </app-item-content>
+            </div>
+            <div class="column text text-16-24 text_medium t-gray-01">
+              Gadget & Gear
+            </div>
+            <div class="column text text-16-24 text_medium t-gray-01">
+              17 May, 2023
+            </div>
+            <div class="column text text-16-24 text_medium t-gray-01">
+              Credit Card
+            </div>
+            <div class="column text text-16-24 text_semibold t-black">
+              $160.00
+            </div>
+          </app-item>
+        </app-card-content>
+      </app-card>
+    </mat-tab>
+    <mat-tab label="Revenue"></mat-tab>
+    <mat-tab label="Expenses"></mat-tab>
+  </mat-tab-group>
 </div>
