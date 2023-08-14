@@ -4,3 +4,8 @@
   height: 44px;
   border-bottom: 1px solid map-get($project-colors, "colors", gray-06);
 }
+
+.card-background {
+  border-radius: 8px 8px 0px 0px;
+  background-color: map-get($project-colors, "colors", gray-05);
+}

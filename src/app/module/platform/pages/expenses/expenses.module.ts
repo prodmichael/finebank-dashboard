@@ -9,9 +9,15 @@ import { ExpensesComponent } from './expenses.component';
 import { ExpensesHomeComponent } from './pages/expenses-home/expenses-home.component';
 import { ExpensesComparisonComponent } from './components/expenses-comparison/expenses-comparison.component';
 import { ExpensesBreakdownComponent } from './components/expenses-breakdown/expenses-breakdown.component';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
-  declarations: [ExpensesComponent, ExpensesHomeComponent, ExpensesComparisonComponent, ExpensesBreakdownComponent],
+  declarations: [
+    ExpensesComponent,
+    ExpensesHomeComponent,
+    ExpensesComparisonComponent,
+    ExpensesBreakdownComponent,
+  ],
   imports: [
     CommonModule,
     ExpensesRoutingModule,
@@ -19,6 +25,7 @@ import { ExpensesBreakdownComponent } from './components/expenses-breakdown/expe
     HeaderModule,
     CardModule,
     ItemModule,
+    MatIconModule,
   ],
 })
 export class ExpensesModule {}

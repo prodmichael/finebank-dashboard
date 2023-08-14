@@ -3,7 +3,11 @@
   [class.item_border]="border"
   [style.padding]="padding"
 >
-  <div class="flex flex_align-center gap-16">
+  <div
+    [class.item-display_none]="itemLeft.children.length < 1"
+    class="flex flex_align-center gap-16"
+    #itemLeft
+  >
     <ng-content select="[item-img]"></ng-content>
     <ng-content select="[item-content]"></ng-content>
   </div>

@@ -5,4 +5,6 @@ import { Component, Input } from '@angular/core';
   templateUrl: './card-header.component.html',
   styleUrls: ['./card-header.component.scss'],
 })
-export class CardHeaderComponent {}
+export class CardHeaderComponent {
+  background: boolean = false;
+}
