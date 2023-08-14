@@ -5,4 +5,83 @@
 <div class="container">
   <p class="text text-22-32 text_regular t-gray-02">Upcoming Bills</p>
   <app-spacing type="l3"></app-spacing>
+  <app-card>
+    <app-card-header card-header>
+      <p class="column text text-16-24 text_bold t-black">Due Date</p>
+      <p class="column text text-16-24 text_bold t-black">Logo</p>
+      <p class="column text text-16-24 text_bold t-black">Item Description</p>
+      <p class="column text text-16-24 text_bold t-black">Last Charge</p>
+      <p class="column text text-16-24 text_bold t-black">Amount</p>
+    </app-card-header>
+    <app-card-content card-content>
+      <app-item padding="32px 0">
+        <div class="flex column">
+          <app-item-img item-img>
+            <div class="flex flex_column flex_center">
+              <p class="text text-16-18 text_semibold t-gray-02">May</p>
+              <p class="text text-22-32 text_extrabold t-secondary">15</p>
+            </div>
+          </app-item-img>
+        </div>
+        <div class="flex column flex_align-center gap-12">
+          <img src="../../../../../../../assets/figma_logo.png" alt="" />
+          <p class="text text-22-32 text_medium t-black">Figma</p>
+        </div>
+        <div class="column flex_column gap-8">
+          <p class="text text-16-24 text_extrabold t-black">
+            Figma - Yearly plan
+          </p>
+          <p
+            style="width: 170px"
+            class="text text-12-16 text_regular t-gray-03"
+          >
+            For advanced security and more flexible controls, the Professional
+            plan helps you scale design processes company-wide.
+          </p>
+        </div>
+        <p class="column text text-16-24 text_regular t-gray-03">
+          14 May, 2022
+        </p>
+        <div class="flex column">
+          <app-item-amount item-amount>
+            <p class="text text-16-24 text_bold t-secondary">150$</p>
+          </app-item-amount>
+        </div>
+      </app-item>
+      <app-item padding="32px 0">
+        <div class="flex column">
+          <app-item-img item-img>
+            <div class="flex flex_column flex_center">
+              <p class="text text-16-18 text_semibold t-gray-02">May</p>
+              <p class="text text-22-32 text_extrabold t-secondary">15</p>
+            </div>
+          </app-item-img>
+        </div>
+        <div class="flex column flex_align-center gap-12">
+          <img src="../../../../../../../assets/logo_abode.png" alt="" />
+          <p class="text text-22-32 text_medium t-black">Abode</p>
+        </div>
+        <div class="column flex_column gap-8">
+          <p class="text text-16-24 text_extrabold t-black">
+            Adobe Inc - Yearly plan
+          </p>
+          <p
+            style="width: 170px"
+            class="text text-12-16 text_regular t-gray-03"
+          >
+            For advanced security and more flexible controls, the Professional
+            plan helps you scale design processes company-wide.
+          </p>
+        </div>
+        <p class="column text text-16-24 text_regular t-gray-03">
+          14 May, 2022
+        </p>
+        <div class="flex column">
+          <app-item-amount item-amount>
+            <p class="text text-16-24 text_bold t-secondary">559$</p>
+          </app-item-amount>
+        </div>
+      </app-item>
+    </app-card-content>
+  </app-card>
 </div>

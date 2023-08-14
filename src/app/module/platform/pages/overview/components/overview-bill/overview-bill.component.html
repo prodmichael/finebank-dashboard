@@ -10,7 +10,7 @@
   <app-card-content card-content>
     <app-item padding="8px 0px 20px">
       <app-item-img item-img>
-        <div class="flex flex_column">
+        <div class="flex flex_column flex_center">
           <p class="text text-12-16 text_medium t-gray-01">May</p>
           <p class="text text-22-32 text_extrabold t-black">15</p>
         </div>
@@ -24,9 +24,9 @@
           </p>
         </div>
       </app-item-content>
-      <div class="bill-costs flex flex_center">
+      <app-item-amount item-amount>
         <p class="text text-16-24 text_bold t-secondary">150$</p>
-      </div>
+      </app-item-amount>
     </app-item>
     <app-item [border]="false" padding="20px 0px ">
       <app-item-img item-img>
@@ -44,9 +44,9 @@
           </p>
         </div>
       </app-item-content>
-      <div class="bill-costs flex flex_center">
+      <app-item-amount item-amount>
         <p class="text text-16-24 text_bold t-secondary">150$</p>
-      </div>
+      </app-item-amount>
     </app-item>
   </app-card-content>
 </app-card>
