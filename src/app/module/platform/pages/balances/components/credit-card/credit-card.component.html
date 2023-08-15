@@ -16,7 +16,7 @@
     <p class="text text-14-20 text_regular t-gray-03">Account Number</p>
     <app-spacing type="l3"></app-spacing>
     <p class="text text-20-28 text_semibold t-black">
-      ${{ creditCard.amount }}
+      {{ creditCard.amount | currency }}
     </p>
     <p class="text text-14-20 text_regular t-gray-03">Total amount</p>
     <app-spacing type="l4"></app-spacing>

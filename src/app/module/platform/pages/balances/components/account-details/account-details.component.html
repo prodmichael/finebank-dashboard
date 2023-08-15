@@ -20,7 +20,7 @@
         <div class="item flex flex_column">
           <p class="text text-16-24 text_regular t-gray-03">Balance</p>
           <p class="text text-18-20 text_bold t--secondary">
-            ${{ creditCard?.amount }}
+            {{ creditCard?.amount | currency }}
           </p>
         </div>
       </div>
@@ -89,7 +89,9 @@
             <p class="text text-16-24 text_regular t-secondary">8C52d5DKDJ5</p>
           </div>
           <div class="item flex">
-            <p class="text text-16-24 text_bold t-black">$160.00</p>
+            <p class="text text-16-24 text_bold t-black">
+              {{ 160 | currency }}
+            </p>
           </div>
         </div>
         <app-spacing type="l5"></app-spacing>
